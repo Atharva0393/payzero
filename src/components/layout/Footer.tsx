@@ -10,9 +10,9 @@ export const Footer: React.FC = () => {
     <footer className="bg-[#084734] text-[#CDEDB3] pt-20 pb-12 border-t border-[#CDEDB3]/20">
       <Container size="default">
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 pb-16 border-b border-[#CDEDB3]/20">
-          {/* Brand & Thesis Column */}
-          <div className="lg:col-span-2 space-y-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-16 border-b border-[#CDEDB3]/20">
+          {/* Column 1: Brand & Official Entity */}
+          <div className="space-y-4">
             <Link href="/" className="inline-flex items-center gap-2.5 text-xl font-bold tracking-tight text-[#CDEDB3]">
               <span className="w-7 h-7 bg-[#CEF17B] text-[#084734] font-mono text-xs flex items-center justify-center font-bold rounded-[var(--radius-sm)]">
                 P
@@ -21,117 +21,109 @@ export const Footer: React.FC = () => {
                 PAYZERO<span className="text-[#CEF17B]">.</span>
               </span>
             </Link>
-            <p className="text-sm text-[#CDEDB3]/80 leading-relaxed max-w-sm">
-              Payzero designs, finances, and deploys high-yield clean energy architecture and utility-grade storage systems for institutional property owners and enterprise corporations.
+            <div className="font-heading text-sm font-semibold text-[#CEF17B]">
+              Pay Zero Energy Expert Pvt Ltd
+            </div>
+            <p className="text-xs sm:text-sm text-[#CDEDB3]/80 leading-relaxed max-w-xs font-normal">
+              Designing, financing, and deploying high-yield solar energy architecture and utility-grade storage systems for institutional property owners and businesses.
             </p>
-            <div className="pt-2 font-mono text-xs text-[#CDEDB3]/60 space-y-1">
-              <p>HQ // SILICON VALLEY • NEW YORK • TOKYO</p>
-              <p>LICENSED ENERGY INFRASTRUCTURE DEVELOPER</p>
+          </div>
+
+          {/* Column 2: Company Navigation */}
+          <div className="space-y-4">
+            <h4 className="text-xs font-mono tracking-widest text-[#CEF17B] uppercase font-semibold">
+              Company
+            </h4>
+            <ul className="space-y-2.5 text-sm text-[#CDEDB3]/80 font-normal">
+              <li>
+                <Link href="/about" className="hover:text-[#CEF17B] transition-colors duration-200">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/projects" className="hover:text-[#CEF17B] transition-colors duration-200">
+                  Projects
+                </Link>
+              </li>
+              <li>
+                <Link href="/how-it-works" className="hover:text-[#CEF17B] transition-colors duration-200">
+                  How It Works
+                </Link>
+              </li>
+              <li>
+                <Link href="/solutions" className="hover:text-[#CEF17B] transition-colors duration-200">
+                  Solutions
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Contact Details */}
+          <div className="space-y-4">
+            <h4 className="text-xs font-mono tracking-widest text-[#CEF17B] uppercase font-semibold">
+              Contact
+            </h4>
+            <div className="space-y-3 text-sm text-[#CDEDB3]/80 font-normal">
+              <div>
+                <div className="text-[11px] font-mono tracking-wider text-[#CDEDB3]/60 uppercase">
+                  Contact Person
+                </div>
+                <div className="font-medium text-[#CDEDB3] mt-0.5">
+                  Vivek Rathod
+                </div>
+              </div>
+              <div>
+                <div className="text-[11px] font-mono tracking-wider text-[#CDEDB3]/60 uppercase">
+                  Phone
+                </div>
+                <a
+                  href="tel:9561087785"
+                  className="font-mono text-sm text-[#CDEDB3] hover:text-[#CEF17B] transition-colors duration-200 block mt-0.5"
+                >
+                  9561087785
+                </a>
+              </div>
+              <div>
+                <div className="text-[11px] font-mono tracking-wider text-[#CDEDB3]/60 uppercase">
+                  Email
+                </div>
+                <a
+                  href="mailto:pay0energy@gmail.com"
+                  className="text-sm text-[#CDEDB3] hover:text-[#CEF17B] transition-colors duration-200 block mt-0.5 break-all"
+                >
+                  pay0energy@gmail.com
+                </a>
+              </div>
             </div>
           </div>
 
-          {/* Infrastructure Solutions */}
+          {/* Column 4: Physical Office */}
           <div className="space-y-4">
             <h4 className="text-xs font-mono tracking-widest text-[#CEF17B] uppercase font-semibold">
-              Solutions
+              Office
             </h4>
-            <ul className="space-y-2.5 text-sm text-[#CDEDB3]/80">
-              <li>
-                <Link href="/solutions" className="hover:text-[#CEF17B] transition-colors duration-200">
-                  Commercial Rooftops
-                </Link>
-              </li>
-              <li>
-                <Link href="/solutions" className="hover:text-[#CEF17B] transition-colors duration-200">
-                  Utility Ground Arrays
-                </Link>
-              </li>
-              <li>
-                <Link href="/solutions" className="hover:text-[#CEF17B] transition-colors duration-200">
-                  BESS Storage Systems
-                </Link>
-              </li>
-              <li>
-                <Link href="/solutions" className="hover:text-[#CEF17B] transition-colors duration-200">
-                  Microgrid Integration
-                </Link>
-              </li>
-              <li>
-                <Link href="/solutions" className="hover:text-[#CEF17B] transition-colors duration-200">
-                  HVAC & Load Balancing
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Financial & Engineering */}
-          <div className="space-y-4">
-            <h4 className="text-xs font-mono tracking-widest text-[#CEF17B] uppercase font-semibold">
-              Capital & Yield
-            </h4>
-            <ul className="space-y-2.5 text-sm text-[#CDEDB3]/80">
-              <li>
-                <Link href="/#financial-model" className="hover:text-[#CEF17B] transition-colors duration-200">
-                  Capital Yield Model
-                </Link>
-              </li>
-              <li>
-                <Link href="/#financial-model" className="hover:text-[#CEF17B] transition-colors duration-200">
-                  Power Purchase (PPA)
-                </Link>
-              </li>
-              <li>
-                <Link href="/#financial-model" className="hover:text-[#CEF17B] transition-colors duration-200">
-                  Tax Credit Structuring
-                </Link>
-              </li>
-              <li>
-                <Link href="/#financial-model" className="hover:text-[#CEF17B] transition-colors duration-200">
-                  Grid Export Tariffs
-                </Link>
-              </li>
-              <li>
-                <Link href="/#financial-model" className="hover:text-[#CEF17B] transition-colors duration-200">
-                  Performance Guarantee
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Executive Briefing Signup */}
-          <div className="space-y-4">
-            <h4 className="text-xs font-mono tracking-widest text-[#CEF17B] uppercase font-semibold">
-              Executive Briefing
-            </h4>
-            <p className="text-xs text-[#CDEDB3]/80 leading-relaxed">
-              Quarterly intelligence on commercial energy markets, grid regulations, and infrastructure tax policy.
-            </p>
-            <form onSubmit={(e) => e.preventDefault()} className="space-y-2">
-              <input
-                type="email"
-                placeholder="corporate@domain.com"
-                className="w-full px-3.5 py-2 text-xs bg-[#053325] border border-[#CDEDB3]/30 rounded-[var(--radius-sm)] text-[#CDEDB3] placeholder-[#CDEDB3]/50 focus:outline-none focus:border-[#CEF17B] transition-colors"
-                required
-              />
-              <Button variant="primary" size="sm" className="w-full bg-[#CEF17B] text-[#084734] hover:bg-[#CDEDB3] border-none font-bold">
-                Subscribe
-              </Button>
-            </form>
+            <div className="text-sm text-[#CDEDB3]/80 space-y-1.5 leading-relaxed font-normal">
+              <p>Shop No 7, N-1, Shopping Complex,</p>
+              <p>Chhatrapati Sambhajinagar 431003</p>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Bottom Bar / Legal Area with subtle GST number */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#CDEDB3]/60">
-          <p>© {new Date().getFullYear()} Payzero Energy Infrastructure Inc. All rights reserved.</p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
+            <p>© {new Date().getFullYear()} Pay Zero Energy Expert Pvt Ltd. All rights reserved.</p>
+            <span className="hidden sm:inline text-[#CDEDB3]/30">•</span>
+            <p className="font-mono text-[11px] text-[#CDEDB3]/70 tracking-wide">
+              GST No. 27AAQCP1719G1Z7
+            </p>
+          </div>
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="hover:text-[#CEF17B] transition-colors">
               Privacy Standard
             </Link>
             <Link href="/terms" className="hover:text-[#CEF17B] transition-colors">
               Terms of Infrastructure
-            </Link>
-            <Link href="/security" className="hover:text-[#CEF17B] transition-colors">
-              Grid Compliance
             </Link>
           </div>
         </div>
