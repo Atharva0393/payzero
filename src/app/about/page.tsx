@@ -1,6 +1,5 @@
 import React from "react";
 import Container from "@/components/ui/Container";
-import TestimonialSection from "@/components/home/TestimonialSection";
 import ApproachSection from "@/components/home/ApproachSection";
 import Button from "@/components/ui/Button";
 
@@ -34,7 +33,6 @@ export default function AboutPage() {
       {/* Core Approach */}
       <Container size="default">
         <ApproachSection />
-        <TestimonialSection />
       </Container>
     </main>
   );

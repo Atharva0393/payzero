@@ -7,7 +7,6 @@ import ApproachSection from "@/components/home/ApproachSection";
 import FoundationalPreview from "@/components/home/FoundationalPreview";
 import FinancialValueSection from "@/components/home/FinancialValueSection";
 import MetricsBar from "@/components/home/MetricsBar";
-import TestimonialSection from "@/components/home/TestimonialSection";
 import FinalCTASection from "@/components/home/FinalCTASection";
 
 export default function HomePage() {
@@ -107,10 +106,7 @@ export default function HomePage() {
         {/* 6. Metrics Bar */}
         <MetricsBar />
 
-        {/* 7. Institutional Client Endorsement */}
-        <TestimonialSection />
-
-        {/* 8. Final Consultation CTA */}
+        {/* 7. Final Consultation CTA */}
         <FinalCTASection />
       </Container>
     </div>
