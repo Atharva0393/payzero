@@ -1,0 +1,372 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  /* Course Design Cards Tokens */
+  --clr-blue: #1890ff;
+  --clr-green: #01c3a8;
+  --clr-orange: #ffb741;
+  --clr-red: #a63d2a;
+  --bg-dark: #232228;
+  --bg-footer: #151419;
+  --color-white: #fff;
+  --color-gray-light: #ddd;
+  --color-gray-medium: #363636;
+  --color-gray-dark: #292929;
+  --color-gray-very-dark: #222127;
+
+  /* Approved Canonical Payzero Brand Palette */
+  --color-emerald-pine: #084734;   /* Primary Dark / Structure & Authority */
+  --color-lime-glow: #CEF17B;      /* Primary Accent / Energy Highlights */
+  --color-green-tea: #CDEDB3;      /* Primary Website Background Canvas */
+
+  /* Global Semantic Token Mappings */
+  --bg-primary: #CDEDB3;           /* Green Tea main canvas */
+  --bg-surface: #DDF3C7;           /* Elevated Green Tea surface */
+  --bg-subtle: #C2E7A3;            /* Subtle Green Tea stone variant */
+  --bg-inverse: #084734;           /* Emerald Pine dark section base */
+  
+  --text-primary: #084734;         /* Emerald Pine main text */
+  --text-secondary: rgba(8, 71, 52, 0.82); /* Muted Emerald Pine */
+  --text-muted: rgba(8, 71, 52, 0.58);     /* Subtle caption Emerald Pine */
+  --text-inverse: #CDEDB3;         /* Green Tea text on Emerald Pine background */
+  --text-inverse-muted: rgba(205, 237, 179, 0.80);
+
+  --border-light: rgba(8, 71, 52, 0.20);   /* Subtle Emerald Pine border */
+  --border-subtle: rgba(8, 71, 52, 0.12);  /* Minimal divider */
+  --border-dark: rgba(205, 237, 179, 0.22); /* Subtle Green Tea border on dark */
+
+  /* Global Brand Accent Tokens */
+  --accent-primary: #084734;       /* Emerald Pine default button accent */
+  --accent-hover: #063829;
+  --accent-highlight: #CEF17B;     /* Lime Glow highlight accent */
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
+
+@theme {
+  --color-emerald-pine: var(--color-emerald-pine);
+  --color-lime-glow: var(--color-lime-glow);
+  --color-green-tea: var(--color-green-tea);
+
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-bg-inverse: var(--bg-inverse);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-inverse: var(--text-inverse);
+
+  --color-border-light: var(--border-light);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-dark: var(--border-dark);
+
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-highlight: var(--accent-highlight);
+
+  --font-heading: var(--font-heading-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: var(--font-body-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-code-mono), monospace;
+}
+
+/* Base resets & smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-emerald-pine);
+  color: var(--color-lime-glow);
+}
+
+/* Custom architectural grid line background utility */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(8, 71, 52, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(8, 71, 52, 0.05) 1px, transparent 1px);
+}
+
+.bg-grid-pattern-dark {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(205, 237, 179, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(205, 237, 179, 0.06) 1px, transparent 1px);
+}
+
+/* Subtle focus ring style */
+:focus-visible {
+  outline: 2px solid var(--color-emerald-pine);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Course Design Cards Component Styles (Payzero Dark Green Gradient Theme)
+   ========================================================================== */
+
+.course-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+.card {
+  background: linear-gradient(155deg, #084734 0%, #053325 55%, #03231a 100%);
+  border-radius: 20px;
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 12px 32px -4px rgba(8, 71, 52, 0.28), 0 4px 12px -2px rgba(8, 71, 52, 0.18);
+  border: 1px solid rgba(206, 241, 123, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle at top right, rgba(206, 241, 123, 0.10) 0%, transparent 70%);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -4px rgba(8, 71, 52, 0.42);
+  border-color: rgba(206, 241, 123, 0.38);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.card-header .date {
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-green-tea, #CDEDB3);
+  opacity: 0.75;
+  font-weight: 600;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.card-header svg {
+  width: 22px;
+  height: 22px;
+  color: rgba(205, 237, 179, 0.6);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.card-header svg:hover {
+  color: #CEF17B;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-body h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #F4FBE8;
+  margin-bottom: 12px;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+.card-body p {
+  font-size: 0.875rem;
+  color: rgba(205, 237, 179, 0.78);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.card-body .progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(205, 237, 179, 0.75);
+}
+
+.card-body .progress span:first-child {
+  color: rgba(205, 237, 179, 0.7);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.card-body .progress span:last-child {
+  font-weight: 700;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  color: #CEF17B;
+  font-size: 0.75rem;
+}
+
+.card-body .progress-bar {
+  flex: 1;
+  height: 6px;
+  background-color: rgba(5, 41, 30, 0.85);
+  border: 1px solid rgba(206, 241, 123, 0.16);
+  border-radius: 9999px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-body .progress-bar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  width: var(--progress-pct, 70%);
+  background: linear-gradient(90deg, #01C3A8 0%, #CEF17B 100%);
+  box-shadow: 0 0 10px rgba(206, 241, 123, 0.45);
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(205, 237, 179, 0.14);
+}
+
+.card-footer ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-footer ul li {
+  margin-left: -8px;
+  display: flex;
+}
+
+.card-footer ul li:first-child {
+  margin-left: 0;
+}
+
+.card-footer ul li img {
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  border: 2px solid #084734;
+  object-fit: cover;
+  display: block;
+}
+
+.card-footer .btn-add {
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  border: 2px solid #084734;
+  background-color: rgba(206, 241, 123, 0.15);
+  color: #CEF17B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.card-footer .btn-add:hover {
+  background-color: rgba(206, 241, 123, 0.25);
+  color: #fff;
+}
+
+.card-footer .btn-add svg {
+  width: 16px;
+  height: 16px;
+}
+
+.card-footer .btn-countdown {
+  font-size: 0.75rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  background-color: rgba(206, 241, 123, 0.12);
+  color: #CEF17B;
+  border: 1px solid rgba(206, 241, 123, 0.3);
+  transition: all 0.2s ease;
+}
+
+.card-footer .btn-countdown:hover {
+  background-color: rgba(206, 241, 123, 0.22);
+  border-color: rgba(206, 241, 123, 0.55);
+  box-shadow: 0 0 12px rgba(206, 241, 123, 0.25);
+}
+
+/* Optional Color theme accents */
+.card.green .progress-bar::after {
+  background: linear-gradient(90deg, #01C3A8 0%, #CEF17B 100%);
+}
+
+.card.orange .progress-bar::after {
+  background: linear-gradient(90deg, #FFB741 0%, #CEF17B 100%);
+}
+.card.orange .btn-countdown {
+  color: #FFB741;
+  border-color: rgba(255, 183, 65, 0.35);
+  background-color: rgba(255, 183, 65, 0.12);
+}
+
+.card.blue .progress-bar::after {
+  background: linear-gradient(90deg, #1890FF 0%, #01C3A8 100%);
+}
+.card.blue .btn-countdown {
+  color: #60A5FA;
+  border-color: rgba(96, 165, 250, 0.35);
+  background-color: rgba(96, 165, 250, 0.12);
+}
