@@ -25,22 +25,20 @@ const METRICS = [
 
 export const MetricsBar: React.FC = () => {
   return (
-    <div className="py-12 border-b border-[var(--border-light)] bg-[var(--bg-surface)]">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x lg:divide-[var(--border-light)]">
+    <div className="my-12 sm:my-16 rounded-[20px] bg-[var(--bg-surface)] border border-[var(--border-light)] p-8 sm:p-10 lg:p-12 shadow-[0_4px_20px_rgba(8,71,52,0.04)]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-6 lg:gap-0 lg:divide-x lg:divide-[var(--border-light)] items-center">
         {METRICS.map((metric, i) => (
           <div
             key={i}
-            className={`space-y-2 ${i !== 0 ? "lg:pl-8" : ""} ${
-              i !== METRICS.length - 1 ? "lg:pr-8" : ""
-            }`}
+            className="flex flex-col items-center text-center space-y-2.5 px-2 sm:px-4 lg:px-6 xl:px-8"
           >
-            <div className="font-heading text-3xl sm:text-4xl font-extrabold text-[var(--text-primary)] tracking-tight font-mono">
+            <div className="font-mono text-3xl sm:text-4xl font-extrabold text-[var(--text-primary)] tracking-tight leading-none">
               {metric.value}
             </div>
-            <div className="text-sm font-semibold text-[var(--text-primary)]">
+            <div className="text-sm font-bold text-[var(--text-primary)] tracking-tight">
               {metric.label}
             </div>
-            <div className="text-xs text-[var(--text-muted)] leading-relaxed">
+            <div className="text-xs sm:text-[13px] text-[var(--text-secondary)] leading-relaxed max-w-[240px]">
               {metric.detail}
             </div>
           </div>
