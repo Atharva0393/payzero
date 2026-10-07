@@ -165,15 +165,26 @@ export const generativeTreeSource = `<!DOCTYPE html>
   function createTree() {
     allBranches = [];
 
-    const trunkLen = H * rand(0.23, 0.28) / _pad;
-    const trunkThick = Math.max(8, W * 0.015) / _pad;
-    const trunkAngle = -Math.PI / 2 + rand(-0.05, 0.05);
+    // Bounded scaling: guarantee the full canopy fits inside canvas with safe padding on all sides
+    // Max canopy lateral spread is ~2.7x trunk length, and vertical height span is ~3.0x trunk length
+    const padFactor = Math.max(0.8, Math.min(1.3, _pad));
+    const safeMarginX = Math.max(18, W * 0.12);
+    const safeMarginY = Math.max(20, H * 0.12);
+    const availW = Math.max(50, (W - safeMarginX * 2) * (1 / padFactor));
+    const availH = Math.max(70, (H - safeMarginY * 2) * (1 / padFactor));
 
-    const approxTreeH = trunkLen * 3.5;
-    const baseY = _pad > 1 ? (H + approxTreeH) / 2 : H + trunkThick * 0.5;
+    const maxLenW = availW / 2.7;
+    const maxLenH = availH / 3.0;
+    const baseLen = Math.min(maxLenW, maxLenH);
+    const trunkLen = Math.max(20, baseLen * rand(0.93, 0.99));
+    const trunkThick = Math.max(4.5, Math.min(10, trunkLen * 0.15));
+    const trunkAngle = -Math.PI / 2 + rand(-0.015, 0.015);
+
+    // Plant trunk at bottom with 4px margin so trunk foot is cleanly grounded
+    const baseY = H - 4;
 
     allBranches.push({
-      x0: W / 2 + rand(-W * 0.03, W * 0.03),
+      x0: W / 2,
       y0: baseY,
       angle: trunkAngle,
       length: trunkLen,
@@ -184,9 +195,9 @@ export const generativeTreeSource = `<!DOCTYPE html>
       children: [],
       spawned: false,
       swayPhase: rand(0, Math.PI * 2),
-      swayAmp: 0.0008,
-      curvature: rand(-0.015, 0.015),
-      colorShift: rand(-8, 8),
+      swayAmp: 0.0006,
+      curvature: rand(-0.01, 0.01),
+      colorShift: rand(-6, 6),
       hueShift: 0,
       parent: null,
       // Pre-computed stroke variation for painterly rendering
@@ -284,9 +295,9 @@ export const generativeTreeSource = `<!DOCTYPE html>
       depth++;
       b = b.parent;
     }
-    // Mouse wind: deeper branches bend more
+    // Mouse wind: deeper branches bend more gently to avoid edge clipping
     if (mouseActive) {
-      total += windForce * 0.04 * depth;
+      total += windForce * 0.02 * depth;
     }
     // Shake: rapid oscillation that decays
     if (shakeAmount > 0.01) {
