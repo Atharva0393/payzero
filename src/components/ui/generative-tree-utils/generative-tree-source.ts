@@ -6,7 +6,7 @@ export const generativeTreeSource = `<!DOCTYPE html>
 <title>Generative Branching Tree</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0a0a; }
+  html, body { width: 100%; height: 100%; overflow: hidden; background: transparent; }
   canvas { display: block; width: 100vw; height: 100vh; }
   .label {
     position: fixed;
@@ -449,30 +449,6 @@ export const generativeTreeSource = `<!DOCTYPE html>
   function drawScene(time) {
     ctx.clearRect(0, 0, W, H);
 
-    // Background
-    ctx.fillStyle = '#0a0a0a';
-    ctx.fillRect(0, 0, W, H);
-
-    // Ambient canopy glow (warm halo behind tree crown)
-    if (treeAlpha > 0.05) {
-      const cx = W / 2, cy = H * 0.38;
-      const canopyGlow = ctx.createRadialGradient(cx, cy, 0, cx, cy, H * 0.42);
-      canopyGlow.addColorStop(0, \`rgba(60, 36, 12, \${0.2 * treeAlpha})\`);
-      canopyGlow.addColorStop(0.5, \`rgba(35, 20, 8, \${0.08 * treeAlpha})\`);
-      canopyGlow.addColorStop(1, 'rgba(10, 10, 10, 0)');
-      ctx.fillStyle = canopyGlow;
-      ctx.fillRect(0, 0, W, H);
-    }
-
-    // Ground glow
-    if (treeAlpha > 0.05) {
-      const groundGrad = ctx.createRadialGradient(W / 2, H, 0, W / 2, H, H * 0.3);
-      groundGrad.addColorStop(0, \`rgba(70, 42, 12, \${0.1 * treeAlpha})\`);
-      groundGrad.addColorStop(1, 'rgba(10, 10, 10, 0)');
-      ctx.fillStyle = groundGrad;
-      ctx.fillRect(0, H * 0.55, W, H * 0.45);
-    }
-
     recalcPositions(time);
 
     // Draw branches
@@ -489,12 +465,6 @@ export const generativeTreeSource = `<!DOCTYPE html>
     drawParticles(ctx, treeAlpha);
     ctx.restore();
 
-    // Vignette
-    const vigGrad = ctx.createRadialGradient(W / 2, H / 2, W * 0.3, W / 2, H / 2, W * 0.78);
-    vigGrad.addColorStop(0, 'rgba(10, 10, 10, 0)');
-    vigGrad.addColorStop(1, 'rgba(4, 4, 4, 0.3)');
-    ctx.fillStyle = vigGrad;
-    ctx.fillRect(0, 0, W, H);
   }
 
   // --- State machine ---
@@ -534,8 +504,6 @@ export const generativeTreeSource = `<!DOCTYPE html>
       }
       case 'waiting': {
         ctx.clearRect(0, 0, W, H);
-        ctx.fillStyle = '#0a0a0a';
-        ctx.fillRect(0, 0, W, H);
         waitTimer++;
         if (waitTimer >= WAIT_DURATION) {
           createTree();

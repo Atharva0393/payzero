@@ -44,7 +44,7 @@ function buildFocusedDocument(size: number, particleAmount: number) {
   );
   const treePadding = 1 / clamp(size, 0.65, 1.5);
   const focusStyles = `<style data-generative-tree-focus>
-html, body, canvas { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #0a0a0a; }
+html, body, canvas { width: 100%; height: 100%; margin: 0; overflow: hidden; background: transparent; }
 .label { display: none !important; }
 </style>`;
   const controls = `<script data-generative-tree-controls>
@@ -191,7 +191,7 @@ export default function GenerativeTree({
   return (
     <div
       className={`threeui-background generative-tree relative overflow-hidden ${className ? ` ${className}` : ""}`}
-      style={{ background: "#0a0a0a", pointerEvents: "auto", ...style }}
+      style={{ background: "transparent", pointerEvents: "auto", ...style }}
     >
       <iframe
         ref={iframeRef}
@@ -208,7 +208,7 @@ export default function GenerativeTree({
           width: "100%",
           height: "100%",
           border: 0,
-          background: "#0a0a0a",
+          background: "transparent",
           opacity: clamp(opacity, 0.05, 1),
           filter: `hue-rotate(${clamp(hue, -180, 180)}deg) saturate(${clamp(saturation, 0, 2)}) brightness(${clamp(brightness, 0.35, 1.8)})`,
         }}
