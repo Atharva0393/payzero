@@ -4,7 +4,7 @@ import Container from "@/components/ui/Container";
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className="relative w-full h-screen min-h-screen flex flex-col justify-between pt-24 sm:pt-28 pb-6 sm:pb-8 text-white bg-[url('/payzerobg.png')] bg-cover bg-center bg-no-repeat overflow-hidden">
+    <section className="relative w-full h-screen min-h-screen flex flex-col justify-between pt-24 sm:pt-28 pb-6 sm:pb-8 text-white bg-[url('/herobg.png')] bg-cover bg-center bg-no-repeat overflow-hidden">
       {/* Subtle top & bottom vignette gradient overlays for high text contrast */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/10 to-black/35 pointer-events-none" />
 

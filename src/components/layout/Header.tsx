@@ -65,6 +65,7 @@ export const Header: React.FC = () => {
             const classList = sections[i].className || "";
             const isDarkSec =
               classList.includes("bg-[#084734]") ||
+              classList.includes("herobg") ||
               classList.includes("payzerobg") ||
               sections[i].tagName.toLowerCase() === "footer";
             currentIsDark = isDarkSec;
