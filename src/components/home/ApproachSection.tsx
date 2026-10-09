@@ -1,6 +1,5 @@
 import React from "react";
 import Badge from "@/components/ui/Badge";
-import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 
 const PRINCIPLES = [
   {
@@ -73,16 +72,6 @@ export const ApproachSection: React.FC = () => {
             </div>
           ))}
         </div>
-      </div>
-
-      {/* Visual Break: Expansive Architectural Installation Photo Area */}
-      <div className="mt-16 sm:mt-20 lg:mt-24">
-        <ImagePlaceholder
-          aspectRatio="21/9"
-          label="PAYZERO // INTEGRATED ARCHITECTURAL SOLAR INSTALLATION"
-          sublabel="High-resolution photography slot for Payzero commercial infrastructure installation"
-          className="shadow-sm"
-        />
       </div>
     </section>
   );
