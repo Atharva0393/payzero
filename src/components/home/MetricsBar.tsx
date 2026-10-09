@@ -25,7 +25,7 @@ const METRICS = [
 
 export const MetricsBar: React.FC = () => {
   return (
-    <div className="my-12 sm:my-16 rounded-[20px] bg-[var(--bg-surface)] border border-[var(--border-light)] p-8 sm:p-10 lg:p-12 shadow-[0_4px_20px_rgba(8,71,52,0.04)]">
+    <div className="my-12 sm:my-16 rounded-[20px] bg-[var(--bg-surface)] border border-[var(--border-light)] p-8 sm:p-10 lg:p-12 shadow-[0_4px_20px_rgba(16,43,80,0.05)]">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-6 lg:gap-0 lg:divide-x lg:divide-[var(--border-light)] items-center">
         {METRICS.map((metric, i) => (
           <div

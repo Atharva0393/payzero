@@ -64,7 +64,7 @@ export const Header: React.FC = () => {
           if (rect.top <= navbarCheckY && rect.bottom > navbarCheckY) {
             const classList = sections[i].className || "";
             const isDarkSec =
-              classList.includes("bg-[#084734]") ||
+              classList.includes("bg-[#102B50]") ||
               classList.includes("herobg") ||
               classList.includes("payzerobg") ||
               sections[i].tagName.toLowerCase() === "footer";
@@ -93,8 +93,8 @@ export const Header: React.FC = () => {
         !isScrolled
           ? "bg-gradient-to-b from-black/50 via-black/10 to-transparent py-5"
           : isDarkSection
-          ? "bg-[#084734]/25 backdrop-blur-md border-b border-[#CDEDB3]/15 shadow-xs"
-          : "bg-[#CDEDB3]/35 backdrop-blur-md border-b border-[#084734]/10 shadow-xs"
+          ? "bg-[#102B50]/30 backdrop-blur-md border-b border-[#FFC928]/15 shadow-xs"
+          : "bg-[#FFF8E7]/80 backdrop-blur-md border-b border-[#E8D8A5]/60 shadow-xs"
       }`}
     >
       <Container size="default">
@@ -103,7 +103,7 @@ export const Header: React.FC = () => {
           <Link
             href="/"
             className={`group flex items-center text-xl sm:text-2xl font-extrabold tracking-widest uppercase focus:outline-none font-heading transition-colors duration-300 ${
-              isDarkSection ? "text-white" : "text-[#084734]"
+              isDarkSection ? "text-white" : "text-[#102B50]"
             }`}
             aria-label="Payzero Homepage"
           >
@@ -117,9 +117,9 @@ export const Header: React.FC = () => {
               activeIndex={activeSectionIndex}
               onTabChange={(idx) => setActiveSectionIndex(idx)}
               className={`transition-colors duration-300 ${
-                isDarkSection ? "text-white" : "text-[#084734]"
+                isDarkSection ? "text-white" : "text-[#102B50]"
               }`}
-              limelightClassName="bg-[#084734] shadow-[0_50px_15px_#084734]"
+              limelightClassName="bg-[#FFC928] shadow-[0_50px_15px_#FFC928]"
             />
           </div>
 
@@ -130,7 +130,7 @@ export const Header: React.FC = () => {
               className={`inline-flex items-center gap-1.5 px-5 py-2 text-sm font-medium rounded-full transition-all duration-300 focus:outline-none ${
                 isDarkSection
                   ? "text-white bg-white/10 hover:bg-white/20 border border-white/40 focus:ring-2 focus:ring-white/50"
-                  : "text-[#084734] bg-[#084734]/5 hover:bg-[#084734]/15 border border-[#084734]/40 focus:ring-2 focus:ring-[#084734]/30"
+                  : "text-[#102B50] bg-[#102B50]/5 hover:bg-[#102B50]/15 border border-[#102B50]/30 focus:ring-2 focus:ring-[#102B50]/20"
               }`}
             >
               <span>Get a Consultation</span>
@@ -144,7 +144,7 @@ export const Header: React.FC = () => {
             className={`md:hidden inline-flex items-center justify-center p-2 rounded-md transition-colors duration-300 focus:outline-none ${
               isDarkSection
                 ? "text-white hover:bg-white/10"
-                : "text-[#084734] hover:bg-[#084734]/10"
+                : "text-[#102B50] hover:bg-[#102B50]/10"
             }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-expanded={isMobileMenuOpen}
@@ -185,13 +185,13 @@ export const Header: React.FC = () => {
 
         {/* Mobile Navigation Drawer */}
         {isMobileMenuOpen && (
-          <div className="md:hidden pt-5 pb-4 border-t border-[#CDEDB3]/20 mt-4 space-y-4 bg-[#084734]/95 backdrop-blur-xl rounded-xl p-4 animate-in fade-in duration-200 text-white">
+          <div className="md:hidden pt-5 pb-4 border-t border-[#E8D8A5]/30 mt-4 space-y-4 bg-[#102B50]/95 backdrop-blur-xl rounded-xl p-4 animate-in fade-in duration-200 text-white">
             <nav className="flex flex-col space-y-3">
               {NAV_ITEMS.map((link) => (
                 <Link
                   key={link.id}
                   href={link.href || "#"}
-                  className="text-base font-medium text-white/90 hover:text-[#CEF17B] py-1"
+                  className="text-base font-medium text-white/90 hover:text-[#FFC928] py-1"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
@@ -201,7 +201,7 @@ export const Header: React.FC = () => {
             <div className="pt-2">
               <Link
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 w-full px-5 py-2.5 text-sm font-semibold text-[#084734] bg-[#CEF17B] hover:bg-[#CDEDB3] rounded-full transition-all"
+                className="inline-flex items-center justify-center gap-2 w-full px-5 py-2.5 text-sm font-semibold text-[#102B50] bg-[#FFC928] hover:bg-[#FFD84D] rounded-full transition-all"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <span>Get a Consultation</span>

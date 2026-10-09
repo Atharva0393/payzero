@@ -102,8 +102,8 @@ const Card: React.FC<CardProps> = ({ data, className }) => {
             </li>
           </ul>
         ) : statusLabel ? (
-          <div className="flex items-center gap-2 text-[11px] font-mono text-[#CDEDB3]/65 uppercase tracking-wider">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#CEF17B]"></span>
+          <div className="flex items-center gap-2 text-[11px] font-mono text-[#FFF8E7]/70 uppercase tracking-wider">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#FFC928]"></span>
             <span>{statusLabel}</span>
           </div>
         ) : (

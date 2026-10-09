@@ -38,7 +38,7 @@ const Card = ({ number, title, description, className, rotate, colors }: CardPro
     <div
       className={`relative w-full md:w-[280px] transition-transform duration-300 hover:z-30 hover:scale-105 ${rotate ?? ""} ${className ?? ""}`}
     >
-      <div className="bg-[#CDEDB3] p-2 rounded-[25px] shadow-[0px_10px_30px_0px_rgba(8,71,52,0.18)] border border-[#084734]/15">
+      <div className="bg-[#FFF0B8] p-2 rounded-[25px] shadow-[0px_10px_30px_0px_rgba(16,43,80,0.12)] border border-[#E8D8A5]">
         <Pin className={`w-8 h-8 z-20 mb-6 mx-auto ${colors.pin}`} />
         <div
           className={`${colors.bg} border ${colors.border} rounded-[15px] p-[18px] h-full flex flex-col relative overflow-hidden`}
@@ -48,10 +48,10 @@ const Card = ({ number, title, description, className, rotate, colors }: CardPro
           >
             {number}
           </span>
-          <h3 className={`text-2xl font-semibold leading-none mb-[10px] ${colors.title ?? "text-[#084734]"}`}>
+          <h3 className={`text-2xl font-semibold leading-none mb-[10px] ${colors.title ?? "text-[#102B50]"}`}>
             {title}
           </h3>
-          <p className={`text-sm/5 tracking-tight ${colors.description ?? "text-[#084734]/70"}`}>
+          <p className={`text-sm/5 tracking-tight ${colors.description ?? "text-[#536171]"}`}>
             {description}
           </p>
         </div>
@@ -110,13 +110,13 @@ export default function HowItWorks({ features, className, stepPositions }: HowIt
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.06]"
           style={{
-            backgroundImage: "linear-gradient(#084734 1px, transparent 1px)",
+            backgroundImage: "linear-gradient(#102B50 1px, transparent 1px)",
             backgroundSize: "100% 32px",
             marginTop: "4px",
           }}
         />
-        <div className="from-[#CDEDB3] pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r" />
-        <div className="from-[#CDEDB3] pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l" />
+        <div className="from-[#FFF8E7] pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r" />
+        <div className="from-[#FFF8E7] pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l" />
 
         <div className="max-w-5xl mx-auto relative z-10">
           <div
@@ -141,8 +141,8 @@ export default function HowItWorks({ features, className, stepPositions }: HowIt
                   return (
                     <m.path
                       d={pathD}
-                      stroke="#084734"
-                      strokeOpacity="0.3"
+                      stroke="#102B50"
+                      strokeOpacity="0.25"
                       strokeWidth="2"
                       strokeDasharray="8 6"
                       fill="none"

@@ -16,13 +16,13 @@ export const Badge: React.FC<BadgeProps> = ({
 
   const variants = {
     neutral:
-      "bg-[#DDF3C7] text-[#084734] border-[#084734]/20",
+      "bg-[#FFF0B8] text-[#102B50] border-[#E8D8A5]",
     outline:
-      "bg-transparent text-[#084734] border-[#084734]/30",
+      "bg-transparent text-[#102B50] border-[#102B50]/30",
     dark:
-      "bg-[#084734] text-[#CDEDB3] border-[#CDEDB3]/20",
+      "bg-[#102B50] text-[#FFF8E7] border-[#E8D8A5]/30",
     accent:
-      "bg-[#084734] text-[#CEF17B] border-[#CEF17B]/40",
+      "bg-[#102B50] text-[#FFC928] border-[#FFC928]/40",
   };
 
   return <span className={`${base} ${variants[variant]} ${className}`}>{children}</span>;

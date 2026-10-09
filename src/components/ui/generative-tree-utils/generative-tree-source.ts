@@ -17,7 +17,7 @@ export const generativeTreeSource = `<!DOCTYPE html>
     font-weight: 500;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: rgba(8, 71, 52, 0.5);
+    color: rgba(16, 43, 80, 0.45);
     z-index: 10;
     pointer-events: none;
     user-select: none;
@@ -57,9 +57,9 @@ export const generativeTreeSource = `<!DOCTYPE html>
     particleSprite.height = 32;
     const pctx = particleSprite.getContext('2d');
     const g = pctx.createRadialGradient(16, 16, 0, 16, 16, 16);
-    g.addColorStop(0, 'rgba(8, 71, 52, 0.75)');
-    g.addColorStop(0.35, 'rgba(14, 90, 64, 0.35)');
-    g.addColorStop(1, 'rgba(14, 90, 64, 0)');
+    g.addColorStop(0, 'rgba(234, 169, 0, 0.7)');
+    g.addColorStop(0.35, 'rgba(255, 201, 40, 0.35)');
+    g.addColorStop(1, 'rgba(255, 201, 40, 0)');
     pctx.fillStyle = g;
     pctx.fillRect(0, 0, 32, 32);
   }
@@ -124,14 +124,14 @@ export const generativeTreeSource = `<!DOCTYPE html>
     drawCtx.globalAlpha = 1;
   }
 
-  // --- Color palette (deep emerald pine trunk → dark forest green → lush dark green leaf tips) ---
+  // --- Color palette (deep timber trunk → warm solar amber → vibrant golden foliage tips) ---
   const PALETTE = [
-    { r: 6, g: 45, b: 32 },    // deep pine trunk (#062D20)
-    { r: 8, g: 58, b: 42 },    // deep forest bark (#083A2A)
-    { r: 10, g: 71, b: 52 },   // emerald pine (#0A4734, primary brand color)
-    { r: 13, g: 84, b: 60 },   // rich forest green
-    { r: 16, g: 98, b: 70 },   // lush dark foliage green
-    { r: 20, g: 112, b: 78 },  // vibrant dark emerald leaves & tips
+    { r: 75, g: 44, b: 16 },    // deep solar timber trunk
+    { r: 120, g: 72, b: 20 },   // rich amber bark
+    { r: 170, g: 105, b: 25 },  // golden hour branch
+    { r: 210, g: 140, b: 30 },  // solar gold mid-branch
+    { r: 234, g: 169, b: 0 },   // Golden Hour foliage
+    { r: 255, g: 205, b: 45 },  // vibrant Solar Gold leaves & tips
   ];
 
   function colorForDepth(depth, hueShift) {
@@ -144,12 +144,12 @@ export const generativeTreeSource = `<!DOCTYPE html>
     let g = lerp(PALETTE[i0].g, PALETTE[i1].g, f);
     let b = lerp(PALETTE[i0].b, PALETTE[i1].b, f);
 
-    // Per-branch subtle organic hue variation (deep pine to lush emerald)
+    // Per-branch subtle organic hue variation (warm amber to radiant gold)
     if (hueShift !== undefined) {
       const strength = t * t * 14;
-      r += hueShift * strength * -0.2;
-      g += hueShift * strength * 0.8;
-      b += hueShift * strength * 0.3;
+      r += hueShift * strength * 0.7;
+      g += hueShift * strength * 0.5;
+      b += hueShift * strength * 0.1;
     }
 
     return { r, g, b };
@@ -392,11 +392,11 @@ export const generativeTreeSource = `<!DOCTYPE html>
       const ox = perpX * offsetAmt;
       const oy = perpY * offsetAmt;
 
-      // Color variation per stroke (staying in rich dark green spectrum)
+      // Color variation per stroke (staying in rich solar amber spectrum)
       const shift = normalizedS * 14 + b.colorShift * 0.2;
-      const r = Math.max(0, Math.min(255, col.r + shift * 0.25));
-      const g = Math.max(0, Math.min(255, col.g + shift * 0.9));
-      const bb = Math.max(0, Math.min(255, col.b + shift * 0.45));
+      const r = Math.max(0, Math.min(255, col.r + shift * 0.8));
+      const g = Math.max(0, Math.min(255, col.g + shift * 0.6));
+      const bb = Math.max(0, Math.min(255, col.b + shift * 0.2));
 
       // Core stroke is full opacity, flanking strokes are softer
       const isCore = s === Math.floor(strokeCount / 2);
@@ -416,27 +416,27 @@ export const generativeTreeSource = `<!DOCTYPE html>
       drawCtx.stroke();
     }
 
-    // Soft ambient green aura on mid-to-deep branches
+    // Soft ambient solar gold aura on mid-to-deep branches
     if (b.depth >= 4 && b.depth < MAX_DEPTH - 1 && b.growthProgress > 0.8) {
-      const glowAlpha = smoothstep(0.8, 1.0, b.growthProgress) * 0.07 * (b.depth / MAX_DEPTH);
+      const glowAlpha = smoothstep(0.8, 1.0, b.growthProgress) * 0.08 * (b.depth / MAX_DEPTH);
       const glowR = Math.max(4, thickBase * 2);
       const grd = drawCtx.createRadialGradient(x2, y2, 0, x2, y2, glowR);
-      grd.addColorStop(0, \`rgba(\${Math.max(0,col.r-2)|0}, \${Math.min(255,col.g+22)|0}, \${Math.min(255,col.b+12)|0}, \${glowAlpha})\`);
-      grd.addColorStop(0.5, \`rgba(\${col.r|0}, \${col.g|0}, \${col.b|0}, \${glowAlpha * 0.25})\`);
-      grd.addColorStop(1, \`rgba(\${col.r|0}, \${col.g|0}, \${col.b|0}, 0)\`);
+      grd.addColorStop(0, \`rgba(255, 201, 40, \${glowAlpha})\`);
+      grd.addColorStop(0.5, \`rgba(234, 169, 0, \${glowAlpha * 0.3})\`);
+      grd.addColorStop(1, \`rgba(234, 169, 0, 0)\`);
       drawCtx.fillStyle = grd;
       drawCtx.beginPath();
       drawCtx.arc(x2, y2, glowR, 0, Math.PI * 2);
       drawCtx.fill();
     }
 
-    // Delicate dark green tips and leaf dots (inherit branch color)
+    // Delicate Solar Gold tips and leaf dots (inherit branch color)
     if (b.tipDots.length > 0 && b.growthProgress > 0.9) {
       const tipFade = smoothstep(0.9, 1.0, b.growthProgress);
-      // Rich dark green for the tip leaves
-      const tr = Math.max(0, col.r * 0.85);
-      const tg2 = Math.min(255, col.g * 1.15 + 12);
-      const tb = Math.max(0, col.b * 0.9);
+      // Radiant Solar Gold for the tip leaves
+      const tr = 255;
+      const tg2 = 205;
+      const tb = 45;
       for (const dot of b.tipDots) {
         const dx = x2 + dot.ox;
         const dy = y2 + dot.oy;
@@ -444,9 +444,9 @@ export const generativeTreeSource = `<!DOCTYPE html>
         const ds = dot.size;
 
         const tg = drawCtx.createRadialGradient(dx, dy, 0, dx, dy, ds * 2);
-        tg.addColorStop(0, \`rgba(\${tr|0}, \${tg2|0}, \${tb|0}, \${da * 0.85})\`);
-        tg.addColorStop(0.5, \`rgba(\${col.r|0}, \${col.g|0}, \${col.b|0}, \${da * 0.3})\`);
-        tg.addColorStop(1, \`rgba(\${col.r|0}, \${col.g|0}, \${col.b|0}, 0)\`);
+        tg.addColorStop(0, \`rgba(\${tr}, \${tg2}, \${tb}, \${da * 0.9})\`);
+        tg.addColorStop(0.5, \`rgba(234, 169, 0, \${da * 0.35})\`);
+        tg.addColorStop(1, \`rgba(234, 169, 0, 0)\`);
         drawCtx.fillStyle = tg;
         drawCtx.beginPath();
         drawCtx.arc(dx, dy, ds * 2, 0, Math.PI * 2);

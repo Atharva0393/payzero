@@ -176,12 +176,12 @@ export const LimelightNav: React.FC<LimelightNavProps> = ({
       <div
         ref={limelightRef}
         className={`absolute top-0 z-10 h-[4px] rounded-full transition-[left,width,opacity,visibility,background-color,box-shadow] duration-300 ease-in-out ${
-          limelightClassName ? limelightClassName : "bg-[#084734] shadow-[0_50px_15px_#084734]"
+          limelightClassName ? limelightClassName : "bg-[#FFC928] shadow-[0_50px_15px_#FFC928]"
         }`}
         style={{ left: "-999px", opacity: 0, visibility: "hidden" }}
       >
         <div
-          className="absolute left-[-35%] top-[4px] w-[170%] h-14 [clip-path:polygon(0%_100%,20%_0,80%_0,100%_100%)] bg-gradient-to-b from-[#084734]/60 to-transparent pointer-events-none"
+          className="absolute left-[-35%] top-[4px] w-[170%] h-14 [clip-path:polygon(0%_100%,20%_0,80%_0,100%_100%)] bg-gradient-to-b from-[#FFC928]/60 to-transparent pointer-events-none"
         />
       </div>
     </nav>

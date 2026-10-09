@@ -10,12 +10,12 @@ const PROCESS_STEPS: Step[] = [
     description:
       "Understand the property architecture, energy consumption profile, available installation area, and project goals.",
     colors: {
-      bg: "bg-[#084734]",
-      text: "text-[#CEF17B]",
-      title: "text-[#CEF17B]",
-      description: "text-[#CDEDB3]",
-      border: "border-[#084734]",
-      pin: "text-[#084734]",
+      bg: "bg-[#102B50]",
+      text: "text-[#FFC928]",
+      title: "text-[#FFFFFF]",
+      description: "text-[#FFF8E7]/80",
+      border: "border-[#FFC928]/25",
+      pin: "text-[#102B50]",
     },
   },
   {
@@ -23,12 +23,12 @@ const PROCESS_STEPS: Step[] = [
     description:
       "Develop a purpose-built solar system tailored around the property's physical characteristics and power requirements.",
     colors: {
-      bg: "bg-[#CEF17B]",
-      text: "text-[#084734]",
-      title: "text-[#084734]",
-      description: "text-[#084734]/80",
-      border: "border-[#CEF17B]",
-      pin: "text-[#084734]",
+      bg: "bg-[#FFFFFF]",
+      text: "text-[#FFC928]",
+      title: "text-[#102B50]",
+      description: "text-[#536171]",
+      border: "border-[#E8D8A5]",
+      pin: "text-[#102B50]",
     },
   },
   {
@@ -36,12 +36,12 @@ const PROCESS_STEPS: Step[] = [
     description:
       "Coordinate the physical installation and electrical integration with meticulous attention to execution quality.",
     colors: {
-      bg: "bg-[#084734]",
-      text: "text-[#CEF17B]",
-      title: "text-[#CEF17B]",
-      description: "text-[#CDEDB3]",
-      border: "border-[#084734]",
-      pin: "text-[#084734]",
+      bg: "bg-[#102B50]",
+      text: "text-[#FFC928]",
+      title: "text-[#FFFFFF]",
+      description: "text-[#FFF8E7]/80",
+      border: "border-[#FFC928]/25",
+      pin: "text-[#102B50]",
     },
   },
   {
@@ -49,12 +49,12 @@ const PROCESS_STEPS: Step[] = [
     description:
       "Commission the solar infrastructure, verify system telemetry, and transition the property into live energy generation.",
     colors: {
-      bg: "bg-[#CEF17B]",
-      text: "text-[#084734]",
-      title: "text-[#084734]",
-      description: "text-[#084734]/80",
-      border: "border-[#CEF17B]",
-      pin: "text-[#084734]",
+      bg: "bg-[#FFFFFF]",
+      text: "text-[#FFC928]",
+      title: "text-[#102B50]",
+      description: "text-[#536171]",
+      border: "border-[#E8D8A5]",
+      pin: "text-[#102B50]",
     },
   },
 ];

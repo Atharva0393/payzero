@@ -15,31 +15,42 @@
   --color-gray-dark: #292929;
   --color-gray-very-dark: #222127;
 
-  /* Approved Canonical Payzero Brand Palette */
-  --color-emerald-pine: #084734;   /* Primary Dark / Structure & Authority */
-  --color-lime-glow: #CEF17B;      /* Primary Accent / Energy Highlights */
-  --color-green-tea: #CDEDB3;      /* Primary Website Background Canvas */
+  /* Approved Canonical Payzero Solar Yellow Brand Palette */
+  --color-solar-cream: #FFF8E7;      /* Primary Website Background Canvas */
+  --color-soft-sunlight: #FFF0B8;    /* Secondary Background / Subtle Tonal Panels */
+  --color-solar-gold: #FFC928;       /* Primary Brand Yellow Accent & Energy Highlights */
+  --color-sunburst: #FFD84D;         /* Bright Yellow Emphasis */
+  --color-golden-hour: #EAA900;      /* Deep Amber Accent */
+  --color-solar-navy: #102B50;       /* Primary Dark / Structure & Typography */
+  --color-warm-slate: #536171;       /* Secondary Text / Warm Neutral */
+  --color-warm-sand: #E8D8A5;        /* Borders & Restrained Component Outlines */
 
   /* Global Semantic Token Mappings */
-  --bg-primary: #CDEDB3;           /* Green Tea main canvas */
-  --bg-surface: #DDF3C7;           /* Elevated Green Tea surface */
-  --bg-subtle: #C2E7A3;            /* Subtle Green Tea stone variant */
-  --bg-inverse: #084734;           /* Emerald Pine dark section base */
+  --bg-primary: #FFF8E7;             /* Solar Cream main canvas */
+  --bg-surface: #FFFFFF;             /* Crisp white card surface */
+  --bg-subtle: #FFF0B8;              /* Soft Sunlight tonal section */
+  --bg-inverse: #102B50;             /* Solar Navy dark section base */
   
-  --text-primary: #084734;         /* Emerald Pine main text */
-  --text-secondary: rgba(8, 71, 52, 0.82); /* Muted Emerald Pine */
-  --text-muted: rgba(8, 71, 52, 0.58);     /* Subtle caption Emerald Pine */
-  --text-inverse: #CDEDB3;         /* Green Tea text on Emerald Pine background */
-  --text-inverse-muted: rgba(205, 237, 179, 0.80);
+  --text-primary: #102B50;           /* Solar Navy main text */
+  --text-secondary: #536171;         /* Warm Slate secondary text */
+  --text-muted: rgba(83, 97, 113, 0.72); /* Subtle caption Warm Slate */
+  --text-inverse: #FFF8E7;           /* Solar Cream text on Solar Navy */
+  --text-inverse-muted: rgba(255, 248, 231, 0.82);
 
-  --border-light: rgba(8, 71, 52, 0.20);   /* Subtle Emerald Pine border */
-  --border-subtle: rgba(8, 71, 52, 0.12);  /* Minimal divider */
-  --border-dark: rgba(205, 237, 179, 0.22); /* Subtle Green Tea border on dark */
+  --border-light: #E8D8A5;           /* Warm Sand border */
+  --border-subtle: rgba(232, 216, 165, 0.50); /* Minimal divider */
+  --border-dark: rgba(255, 201, 40, 0.22);    /* Subtle Solar Gold border on dark */
 
   /* Global Brand Accent Tokens */
-  --accent-primary: #084734;       /* Emerald Pine default button accent */
-  --accent-hover: #063829;
-  --accent-highlight: #CEF17B;     /* Lime Glow highlight accent */
+  --accent-primary: #102B50;         /* Solar Navy primary button accent */
+  --accent-hover: #0B1F3A;
+  --accent-highlight: #FFC928;       /* Solar Gold highlight accent */
+  --accent-gold: #FFC928;
+
+  /* Safe backward-compatible aliases */
+  --color-emerald-pine: #102B50;
+  --color-lime-glow: #FFC928;
+  --color-green-tea: #FFF8E7;
 
   --radius-sm: 4px;
   --radius-md: 6px;
@@ -48,9 +59,19 @@
 }
 
 @theme {
-  --color-emerald-pine: var(--color-emerald-pine);
-  --color-lime-glow: var(--color-lime-glow);
-  --color-green-tea: var(--color-green-tea);
+  --color-solar-cream: var(--color-solar-cream);
+  --color-soft-sunlight: var(--color-soft-sunlight);
+  --color-solar-gold: var(--color-solar-gold);
+  --color-sunburst: var(--color-sunburst);
+  --color-golden-hour: var(--color-golden-hour);
+  --color-solar-navy: var(--color-solar-navy);
+  --color-warm-slate: var(--color-warm-slate);
+  --color-warm-sand: var(--color-warm-sand);
+
+  /* Aliases for safety */
+  --color-emerald-pine: var(--color-solar-navy);
+  --color-lime-glow: var(--color-solar-gold);
+  --color-green-tea: var(--color-solar-cream);
 
   --color-bg-primary: var(--bg-primary);
   --color-bg-surface: var(--bg-surface);
@@ -95,33 +116,33 @@ body {
 }
 
 ::selection {
-  background-color: var(--color-emerald-pine);
-  color: var(--color-lime-glow);
+  background-color: var(--color-solar-navy);
+  color: var(--color-solar-gold);
 }
 
 /* Custom architectural grid line background utility */
 .bg-grid-pattern {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(8, 71, 52, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(8, 71, 52, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(16, 43, 80, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(16, 43, 80, 0.04) 1px, transparent 1px);
 }
 
 .bg-grid-pattern-dark {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(205, 237, 179, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(205, 237, 179, 0.06) 1px, transparent 1px);
+    linear-gradient(to right, rgba(232, 216, 165, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(232, 216, 165, 0.08) 1px, transparent 1px);
 }
 
 /* Subtle focus ring style */
 :focus-visible {
-  outline: 2px solid var(--color-emerald-pine);
+  outline: 2px solid var(--color-solar-navy);
   outline-offset: 2px;
 }
 
 /* ==========================================================================
-   Course Design Cards Component Styles (Payzero Dark Green Gradient Theme)
+   Course Design Cards Component Styles (Solar Navy & Gold Theme)
    ========================================================================== */
 
 .course-card-grid {
@@ -132,14 +153,14 @@ body {
 }
 
 .card {
-  background: linear-gradient(155deg, #084734 0%, #053325 55%, #03231a 100%);
+  background: linear-gradient(155deg, #102B50 0%, #0B1F3A 55%, #071528 100%);
   border-radius: 20px;
   padding: 28px 26px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 12px 32px -4px rgba(8, 71, 52, 0.28), 0 4px 12px -2px rgba(8, 71, 52, 0.18);
-  border: 1px solid rgba(206, 241, 123, 0.18);
+  box-shadow: 0 12px 32px -4px rgba(16, 43, 80, 0.28), 0 4px 12px -2px rgba(16, 43, 80, 0.18);
+  border: 1px solid rgba(255, 201, 40, 0.22);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   position: relative;
   overflow: hidden;
@@ -152,15 +173,15 @@ body {
   right: 0;
   width: 160px;
   height: 160px;
-  background: radial-gradient(circle at top right, rgba(206, 241, 123, 0.10) 0%, transparent 70%);
+  background: radial-gradient(circle at top right, rgba(255, 201, 40, 0.12) 0%, transparent 70%);
   pointer-events: none;
   border-radius: inherit;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px -4px rgba(8, 71, 52, 0.42);
-  border-color: rgba(206, 241, 123, 0.38);
+  box-shadow: 0 20px 40px -4px rgba(16, 43, 80, 0.42);
+  border-color: rgba(255, 201, 40, 0.45);
 }
 
 .card-header {
@@ -174,8 +195,8 @@ body {
   font-size: 0.75rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--color-green-tea, #CDEDB3);
-  opacity: 0.75;
+  color: #FFF8E7;
+  opacity: 0.85;
   font-weight: 600;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
@@ -183,13 +204,13 @@ body {
 .card-header svg {
   width: 22px;
   height: 22px;
-  color: rgba(205, 237, 179, 0.6);
+  color: rgba(255, 248, 231, 0.65);
   cursor: pointer;
   transition: color 0.2s ease;
 }
 
 .card-header svg:hover {
-  color: #CEF17B;
+  color: #FFC928;
 }
 
 .card-body {
@@ -201,7 +222,7 @@ body {
 .card-body h3 {
   font-size: 1.35rem;
   font-weight: 700;
-  color: #F4FBE8;
+  color: #FFFFFF;
   margin-bottom: 12px;
   line-height: 1.25;
   letter-spacing: -0.015em;
@@ -209,7 +230,7 @@ body {
 
 .card-body p {
   font-size: 0.875rem;
-  color: rgba(205, 237, 179, 0.78);
+  color: rgba(255, 248, 231, 0.82);
   line-height: 1.6;
   margin-bottom: 28px;
 }
@@ -222,11 +243,11 @@ body {
   margin-top: auto;
   font-size: 0.75rem;
   font-weight: 500;
-  color: rgba(205, 237, 179, 0.75);
+  color: rgba(255, 248, 231, 0.75);
 }
 
 .card-body .progress span:first-child {
-  color: rgba(205, 237, 179, 0.7);
+  color: rgba(255, 248, 231, 0.75);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -237,15 +258,15 @@ body {
 .card-body .progress span:last-child {
   font-weight: 700;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  color: #CEF17B;
+  color: #FFC928;
   font-size: 0.75rem;
 }
 
 .card-body .progress-bar {
   flex: 1;
   height: 6px;
-  background-color: rgba(5, 41, 30, 0.85);
-  border: 1px solid rgba(206, 241, 123, 0.16);
+  background-color: rgba(7, 21, 40, 0.85);
+  border: 1px solid rgba(255, 201, 40, 0.20);
   border-radius: 9999px;
   position: relative;
   overflow: hidden;
@@ -260,8 +281,8 @@ body {
   border-radius: 9999px;
   transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   width: var(--progress-pct, 70%);
-  background: linear-gradient(90deg, #01C3A8 0%, #CEF17B 100%);
-  box-shadow: 0 0 10px rgba(206, 241, 123, 0.45);
+  background: linear-gradient(90deg, #EAA900 0%, #FFC928 100%);
+  box-shadow: 0 0 10px rgba(255, 201, 40, 0.45);
 }
 
 .card-footer {
@@ -271,7 +292,7 @@ body {
   gap: 12px;
   margin-top: 26px;
   padding-top: 18px;
-  border-top: 1px solid rgba(205, 237, 179, 0.14);
+  border-top: 1px solid rgba(255, 248, 231, 0.15);
 }
 
 .card-footer ul {
@@ -295,7 +316,7 @@ body {
   width: 32px;
   height: 32px;
   border-radius: 9999px;
-  border: 2px solid #084734;
+  border: 2px solid #102B50;
   object-fit: cover;
   display: block;
 }
@@ -304,9 +325,9 @@ body {
   width: 32px;
   height: 32px;
   border-radius: 9999px;
-  border: 2px solid #084734;
-  background-color: rgba(206, 241, 123, 0.15);
-  color: #CEF17B;
+  border: 2px solid #102B50;
+  background-color: rgba(255, 201, 40, 0.15);
+  color: #FFC928;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -315,7 +336,7 @@ body {
 }
 
 .card-footer .btn-add:hover {
-  background-color: rgba(206, 241, 123, 0.25);
+  background-color: rgba(255, 201, 40, 0.30);
   color: #fff;
 }
 
@@ -336,34 +357,34 @@ body {
   align-items: center;
   gap: 6px;
   white-space: nowrap;
-  background-color: rgba(206, 241, 123, 0.12);
-  color: #CEF17B;
-  border: 1px solid rgba(206, 241, 123, 0.3);
+  background-color: rgba(255, 201, 40, 0.14);
+  color: #FFC928;
+  border: 1px solid rgba(255, 201, 40, 0.35);
   transition: all 0.2s ease;
 }
 
 .card-footer .btn-countdown:hover {
-  background-color: rgba(206, 241, 123, 0.22);
-  border-color: rgba(206, 241, 123, 0.55);
-  box-shadow: 0 0 12px rgba(206, 241, 123, 0.25);
+  background-color: rgba(255, 201, 40, 0.25);
+  border-color: rgba(255, 201, 40, 0.60);
+  box-shadow: 0 0 12px rgba(255, 201, 40, 0.30);
 }
 
 /* Optional Color theme accents */
 .card.green .progress-bar::after {
-  background: linear-gradient(90deg, #01C3A8 0%, #CEF17B 100%);
+  background: linear-gradient(90deg, #EAA900 0%, #FFC928 100%);
 }
 
 .card.orange .progress-bar::after {
-  background: linear-gradient(90deg, #FFB741 0%, #CEF17B 100%);
+  background: linear-gradient(90deg, #EAA900 0%, #FFD84D 100%);
 }
 .card.orange .btn-countdown {
-  color: #FFB741;
-  border-color: rgba(255, 183, 65, 0.35);
-  background-color: rgba(255, 183, 65, 0.12);
+  color: #FFC928;
+  border-color: rgba(255, 201, 40, 0.35);
+  background-color: rgba(255, 201, 40, 0.14);
 }
 
 .card.blue .progress-bar::after {
-  background: linear-gradient(90deg, #1890FF 0%, #01C3A8 100%);
+  background: linear-gradient(90deg, #1890FF 0%, #FFC928 100%);
 }
 .card.blue .btn-countdown {
   color: #60A5FA;
