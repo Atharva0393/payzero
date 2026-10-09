@@ -60,37 +60,37 @@ const CONCEPTUAL_MODEL_STEPS = [
 
 export const FinancialValueSection: React.FC = () => {
   return (
-    <section className="relative bg-[#102B50] text-[#FFF8E7] py-16 sm:py-24 lg:py-32 border-y border-[#E8D8A5]/20 overflow-hidden rounded-[var(--radius-lg)] my-12 sm:my-16">
-      {/* Background technical architectural grid */}
-      <div className="absolute inset-0 bg-grid-pattern-dark opacity-30 pointer-events-none" />
+    <section className="relative bg-[#FFF0B8] text-[#102B50] py-16 sm:py-24 lg:py-32 border border-[#E8D8A5] overflow-hidden rounded-[var(--radius-lg)] my-12 sm:my-16 shadow-xs">
+      {/* Background technical architectural grid matching Image 2 */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-60 pointer-events-none" />
 
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center px-6 sm:px-10 lg:px-12">
         {/* Left Column: Editorial Headline, Explanation & Actions */}
         <div className="lg:col-span-6 space-y-8">
           {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[var(--radius-sm)] bg-[#0B1F3A] border border-[#FFC928]/30 text-[11px] font-mono tracking-widest text-[#FFC928] uppercase font-medium">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[var(--radius-sm)] bg-[#FFF8E7] border border-[#E8D8A5] text-[11px] font-mono tracking-widest text-[#102B50] uppercase font-semibold">
             <span className="w-1.5 h-1.5 rounded-full bg-[#FFC928]"></span>
             THE ECONOMICS OF SOLAR
           </div>
 
           {/* Headline */}
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#FFF8E7] tracking-tight leading-[1.12]">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#102B50] tracking-tight leading-[1.12]">
             Energy Is a Long-Term Cost. Design It Accordingly.
           </h2>
 
           {/* Supporting Copy */}
-          <p className="text-base sm:text-lg text-[#FFF8E7]/80 leading-relaxed font-normal">
+          <p className="text-base sm:text-lg text-[#536171] leading-relaxed font-normal">
             The economics of a solar system depend on property architecture, energy consumption patterns, system sizing, utility tariffs, and long-term capital structure. Every project must be evaluated according to its unique financial parameters.
           </p>
 
           {/* Key Evaluation Factors */}
-          <div className="pt-2 space-y-3.5 border-t border-[#E8D8A5]/20">
+          <div className="pt-2 space-y-3.5 border-t border-[#E8D8A5]">
             {EVALUATION_FACTORS.map((factor) => (
-              <div key={factor.code} className="flex items-start gap-3.5 text-xs text-[#FFF8E7]/80">
-                <span className="font-mono text-[#FFC928] font-semibold">{factor.code}</span>
+              <div key={factor.code} className="flex items-start gap-3.5 text-xs text-[#536171]">
+                <span className="font-mono text-[#EAA900] font-bold">{factor.code}</span>
                 <div>
-                  <span className="text-[#FFF8E7] font-medium">{factor.label}</span>
-                  <span className="mx-1.5 text-[#FFF8E7]/50">—</span>
+                  <span className="text-[#102B50] font-bold">{factor.label}</span>
+                  <span className="mx-1.5 text-[#536171]/40">—</span>
                   <span>{factor.detail}</span>
                 </div>
               </div>
@@ -103,14 +103,14 @@ export const FinancialValueSection: React.FC = () => {
               href="#contact"
               variant="primary"
               size="lg"
-              className="bg-[#FFC928] text-[#102B50] hover:bg-[#FFD84D] border-none justify-center font-bold"
+              className="bg-[#102B50] text-white hover:bg-[#0B1F3A] border-none justify-center font-bold shadow-md"
             >
               Request a Project Assessment
             </Button>
 
             <Link
               href="#engineering"
-              className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold text-[#FFF8E7] hover:text-[#FFC928] transition-colors group"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold text-[#102B50] hover:text-[#EAA900] transition-colors group"
             >
               <span>How It Works</span>
               <svg
@@ -133,14 +133,14 @@ export const FinancialValueSection: React.FC = () => {
 
         {/* Right Column: Conceptual Financial Model Visualization */}
         <div className="lg:col-span-6 relative">
-          <div className="bg-[#0B1F3A] border border-[#E8D8A5]/20 rounded-[var(--radius-lg)] p-6 sm:p-8 space-y-6 shadow-2xl">
+          <div className="bg-[#FFFFFF] border border-[#E8D8A5] rounded-[var(--radius-lg)] p-6 sm:p-8 space-y-6 shadow-xl">
             {/* Top Frame Header */}
-            <div className="flex items-center justify-between pb-5 border-b border-[#E8D8A5]/20 font-mono text-[10px] tracking-widest text-[#FFF8E7]/70 uppercase">
-              <span className="flex items-center gap-2 text-[#FFF8E7]">
+            <div className="flex items-center justify-between pb-5 border-b border-[#E8D8A5] font-mono text-[10px] tracking-widest text-[#536171] uppercase">
+              <span className="flex items-center gap-2 text-[#102B50] font-bold">
                 <span className="w-2 h-2 rounded-full bg-[#FFC928] animate-pulse"></span>
                 FINANCIAL EVALUATION MODEL
               </span>
-              <span className="border border-[#E8D8A5]/30 px-2 py-0.5 rounded-[var(--radius-sm)] bg-[#102B50] text-[#FFC928]">
+              <span className="border border-[#E8D8A5] px-2 py-0.5 rounded-[var(--radius-sm)] bg-[#FFF0B8] text-[#102B50] font-bold">
                 CONCEPTUAL
               </span>
             </div>
@@ -150,19 +150,19 @@ export const FinancialValueSection: React.FC = () => {
               {CONCEPTUAL_MODEL_STEPS.map((item) => (
                 <div
                   key={item.step}
-                  className="p-4 bg-[#102B50] border border-[#E8D8A5]/15 rounded-[var(--radius-md)] flex flex-col sm:flex-row sm:items-center justify-between gap-3 transition-colors duration-200 hover:border-[#FFC928]/40"
+                  className="p-4 bg-[#FFF8E7] border border-[#E8D8A5] rounded-[var(--radius-md)] flex flex-col sm:flex-row sm:items-center justify-between gap-3 transition-colors duration-200 hover:border-[#FFC928]"
                 >
                   <div className="space-y-1">
-                    <div className="flex items-center gap-2 text-[10px] font-mono tracking-widest text-[#FFF8E7]/60 uppercase">
+                    <div className="flex items-center gap-2 text-[10px] font-mono tracking-widest text-[#536171] uppercase">
                       <span>{item.step}</span>
                       <span>•</span>
                       <span>{item.tag}</span>
                     </div>
-                    <div className="font-heading text-xs font-bold text-[#FFF8E7] tracking-wide">
+                    <div className="font-heading text-xs font-bold text-[#102B50] tracking-wide">
                       {item.title}
                     </div>
                   </div>
-                  <div className="font-mono text-xs font-semibold text-[#FFC928] bg-[#0B1F3A] px-3 py-1.5 rounded-[var(--radius-sm)] border border-[#FFC928]/30 text-right">
+                  <div className="font-mono text-xs font-bold text-[#102B50] bg-[#FFF0B8] px-3 py-1.5 rounded-[var(--radius-sm)] border border-[#E8D8A5] text-right">
                     {item.value}
                   </div>
                 </div>
@@ -170,28 +170,28 @@ export const FinancialValueSection: React.FC = () => {
             </div>
 
             {/* Conceptual Value Flow Diagram */}
-            <div className="pt-4 border-t border-[#E8D8A5]/20 space-y-3">
-              <div className="text-[10px] font-mono tracking-widest text-[#FFF8E7]/60 uppercase">
+            <div className="pt-4 border-t border-[#E8D8A5] space-y-3">
+              <div className="text-[10px] font-mono tracking-widest text-[#536171] uppercase">
                 FINANCIAL VALUE FLOW
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center font-mono text-[10px]">
-                <div className="p-2.5 bg-[#102B50] border border-[#E8D8A5]/15 rounded-[var(--radius-sm)] text-[#FFF8E7]/80">
+                <div className="p-2.5 bg-[#FFF8E7] border border-[#E8D8A5] rounded-[var(--radius-sm)] text-[#536171] font-semibold">
                   1. ENERGY COST
                 </div>
-                <div className="p-2.5 bg-[#102B50] border border-[#E8D8A5]/15 rounded-[var(--radius-sm)] text-[#FFF8E7]/80">
+                <div className="p-2.5 bg-[#FFF8E7] border border-[#E8D8A5] rounded-[var(--radius-sm)] text-[#536171] font-semibold">
                   2. SYSTEM SIZING
                 </div>
-                <div className="p-2.5 bg-[#102B50] border border-[#E8D8A5]/15 rounded-[var(--radius-sm)] text-[#FFF8E7]/80">
+                <div className="p-2.5 bg-[#FFF8E7] border border-[#E8D8A5] rounded-[var(--radius-sm)] text-[#536171] font-semibold">
                   3. YIELD AUDIT
                 </div>
-                <div className="p-2.5 bg-[#0B1F3A] border border-[#FFC928]/40 rounded-[var(--radius-sm)] text-[#FFC928] font-bold">
+                <div className="p-2.5 bg-[#FFC928] border border-[#EAA900]/40 rounded-[var(--radius-sm)] text-[#102B50] font-extrabold shadow-xs">
                   4. ASSET YIELD
                 </div>
               </div>
             </div>
 
             {/* Bottom Disclaimer */}
-            <div className="pt-2 text-[10px] font-mono text-[#FFF8E7]/50 text-center">
+            <div className="pt-2 text-[10px] font-mono text-[#536171]/70 text-center">
               * FINANCIAL MODELS COMPUTED POST PHYSICAL & ELECTRICAL SITE AUDIT
             </div>
           </div>
