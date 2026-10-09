@@ -228,7 +228,7 @@ export const SolarSavingsCalculator: React.FC = () => {
                   >
                     Monthly Electricity Bill
                   </label>
-                  <div className="font-mono text-2xl sm:text-3xl font-extrabold text-[#102B50] tracking-tight">
+                  <div className="font-heading text-2xl sm:text-3xl font-extrabold text-[#102B50] tracking-tight">
                     {formatINR(monthlyBill)}
                   </div>
                 </div>
@@ -308,11 +308,11 @@ export const SolarSavingsCalculator: React.FC = () => {
 
                   <div className="grid grid-cols-2 gap-4">
                     {/* Capacity metric */}
-                    <div className="p-4 rounded-[16px] bg-[#FFF8E7] border border-[#E8D8A5] space-y-1">
+                    <div className="p-4 rounded-[16px] bg-[#FFF8E7] border border-[#E8D8A5] space-y-1 min-w-0">
                       <div className="text-[10px] font-mono text-[#536171] uppercase">
                         System Capacity
                       </div>
-                      <div className="font-mono text-2xl sm:text-3xl font-extrabold text-[#102B50]">
+                      <div className="font-heading text-2xl sm:text-3xl font-extrabold text-[#102B50] tracking-tight">
                         {results.recommendedKw} kW
                       </div>
                       <div className="text-[11px] text-[#536171]">
@@ -321,11 +321,11 @@ export const SolarSavingsCalculator: React.FC = () => {
                     </div>
 
                     {/* Roof area metric */}
-                    <div className="p-4 rounded-[16px] bg-[#FFF8E7] border border-[#E8D8A5] space-y-1">
+                    <div className="p-4 rounded-[16px] bg-[#FFF8E7] border border-[#E8D8A5] space-y-1 min-w-0">
                       <div className="text-[10px] font-mono text-[#536171] uppercase">
                         Required Roof Area
                       </div>
-                      <div className="font-mono text-2xl sm:text-3xl font-extrabold text-[#102B50]">
+                      <div className="font-heading text-2xl sm:text-3xl font-extrabold text-[#102B50] tracking-tight">
                         {results.recommendedRoofAreaSqFt} sq. ft.
                       </div>
                       <div className="text-[11px] text-[#536171]">Shadow-free area</div>
@@ -374,38 +374,38 @@ export const SolarSavingsCalculator: React.FC = () => {
                     </span>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
                     {/* Monthly */}
-                    <div className="p-4.5 rounded-[18px] bg-[#FFF8E7] border border-[#E8D8A5] space-y-1">
-                      <div className="text-[10px] font-mono text-[#536171] uppercase font-semibold">
+                    <div className="min-w-0 p-4 sm:p-3.5 lg:p-4 rounded-[18px] bg-[#FFF8E7] border border-[#E8D8A5] space-y-1 overflow-hidden">
+                      <div className="text-[10px] font-mono text-[#536171] uppercase font-semibold truncate">
                         Monthly Savings
                       </div>
-                      <div className="font-mono text-2xl sm:text-3xl font-extrabold text-[#102B50]">
+                      <div className="font-heading text-xl sm:text-2xl xl:text-[26px] font-extrabold text-[#102B50] tracking-tight truncate">
                         {formatINR(results.monthlySavings)}
                       </div>
-                      <div className="text-[10px] text-[#536171]">Immediate power bill reduction</div>
+                      <div className="text-[10px] text-[#536171] leading-tight">Immediate power bill reduction</div>
                     </div>
 
                     {/* Yearly */}
-                    <div className="p-4.5 rounded-[18px] bg-[#FFF8E7] border border-[#E8D8A5] space-y-1">
-                      <div className="text-[10px] font-mono text-[#536171] uppercase font-semibold">
+                    <div className="min-w-0 p-4 sm:p-3.5 lg:p-4 rounded-[18px] bg-[#FFF8E7] border border-[#E8D8A5] space-y-1 overflow-hidden">
+                      <div className="text-[10px] font-mono text-[#536171] uppercase font-semibold truncate">
                         Yearly Savings
                       </div>
-                      <div className="font-mono text-2xl sm:text-3xl font-extrabold text-[#102B50]">
+                      <div className="font-heading text-xl sm:text-2xl xl:text-[26px] font-extrabold text-[#102B50] tracking-tight truncate">
                         {formatINR(results.yearlySavings)}
                       </div>
-                      <div className="text-[10px] text-[#536171]">Annualized energy savings</div>
+                      <div className="text-[10px] text-[#536171] leading-tight">Annualized energy savings</div>
                     </div>
 
                     {/* Lifetime */}
-                    <div className="p-4.5 rounded-[18px] bg-[#FFF0B8] border border-[#E8D8A5] space-y-1">
-                      <div className="text-[10px] font-mono text-[#102B50] uppercase font-bold">
+                    <div className="min-w-0 p-4 sm:p-3.5 lg:p-4 rounded-[18px] bg-[#FFF0B8] border border-[#E8D8A5] space-y-1 overflow-hidden">
+                      <div className="text-[10px] font-mono text-[#102B50] uppercase font-bold truncate">
                         25-Year Lifetime
                       </div>
-                      <div className="font-mono text-2xl sm:text-3xl font-extrabold text-[#102B50]">
+                      <div className="font-heading text-lg sm:text-[19px] md:text-xl lg:text-[19px] xl:text-[23px] font-extrabold text-[#102B50] tracking-tight truncate">
                         {formatINR(results.lifetimeSavings)}
                       </div>
-                      <div className="text-[10px] text-[#536171]">With tariff escalation model</div>
+                      <div className="text-[10px] text-[#536171] leading-tight">With tariff escalation model</div>
                     </div>
                   </div>
 
@@ -413,7 +413,7 @@ export const SolarSavingsCalculator: React.FC = () => {
                   <div className="p-4 rounded-[16px] bg-[#FFF8E7] border border-[#E8D8A5] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs font-mono">
                     <div className="text-[#536171]">
                       Illustrative Monthly EMI (5-Yr Loan):{" "}
-                      <strong className="text-[#102B50] font-bold text-sm">
+                      <strong className="text-[#102B50] font-heading font-bold text-sm sm:text-base tracking-tight">
                         {formatINR(results.monthlyEmi)}/mo
                       </strong>
                     </div>
@@ -463,7 +463,7 @@ export const SolarSavingsCalculator: React.FC = () => {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-mono text-2xl sm:text-3xl font-extrabold text-[#102B50]">
+                    <div className="font-heading text-2xl sm:text-3xl font-extrabold text-[#102B50] tracking-tight">
                       {results.annualCo2AvoidedTonnes} Tonnes
                     </div>
                     <div className="text-xs font-bold text-[#102B50] mt-0.5">
@@ -494,7 +494,7 @@ export const SolarSavingsCalculator: React.FC = () => {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-mono text-2xl sm:text-3xl font-extrabold text-[#102B50]">
+                    <div className="font-heading text-2xl sm:text-3xl font-extrabold text-[#102B50] tracking-tight">
                       {results.equivalentTreesPlanted} Trees
                     </div>
                     <div className="text-xs font-bold text-[#102B50] mt-0.5">
@@ -525,7 +525,7 @@ export const SolarSavingsCalculator: React.FC = () => {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-mono text-2xl sm:text-3xl font-extrabold text-[#102B50]">
+                    <div className="font-heading text-2xl sm:text-3xl font-extrabold text-[#102B50] tracking-tight">
                       {new Intl.NumberFormat("en-IN").format(results.equivalentKmDrivenAvoided)} km
                     </div>
                     <div className="text-xs font-bold text-[#102B50] mt-0.5">
