@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useId, useRef } from "react";
+import React, { useState, useEffect, useId, useRef } from "react";
 import Link from "next/link";
 import {
   calculateSolarPotential,
@@ -20,6 +20,7 @@ export const SolarSavingsCalculator: React.FC = () => {
   const [monthlyBill, setMonthlyBill] = useState<number>(2500);
   const [pinTouched, setPinTouched] = useState<boolean>(false);
   const [hasCalculated, setHasCalculated] = useState<boolean>(true); // Pre-calculate initial state for immediate utility
+  const [scrollTrigger, setScrollTrigger] = useState<number>(0);
 
   // Validation
   const pinValidation = validatePinCode(pinCode);
@@ -28,6 +29,23 @@ export const SolarSavingsCalculator: React.FC = () => {
   const [results, setResults] = useState<CalculationResult>(() =>
     calculateSolarPotential(2500, "431003")
   );
+
+  // Smoothly scroll to the results section when calculate is triggered
+  useEffect(() => {
+    if (scrollTrigger > 0 && resultsRef.current) {
+      const prefersReducedMotion =
+        typeof window !== "undefined" &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      // Scroll after DOM commit with header clearance
+      requestAnimationFrame(() => {
+        resultsRef.current?.scrollIntoView({
+          behavior: prefersReducedMotion ? "auto" : "smooth",
+          block: "start",
+        });
+      });
+    }
+  }, [scrollTrigger]);
 
   const handlePinChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value.replace(/\D/g, "").slice(0, 6);
@@ -55,13 +73,7 @@ export const SolarSavingsCalculator: React.FC = () => {
     const newResults = calculateSolarPotential(monthlyBill, pinCode);
     setResults(newResults);
     setHasCalculated(true);
-
-    // Smooth scroll down to results on mobile/tablet viewports
-    if (window.innerWidth < 1024 && resultsRef.current) {
-      setTimeout(() => {
-        resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 100);
-    }
+    setScrollTrigger((prev) => prev + 1);
   };
 
   // Slider background track percentage calculation for custom fill styling
@@ -260,8 +272,7 @@ export const SolarSavingsCalculator: React.FC = () => {
               <div className="pt-2">
                 <button
                   type="submit"
-                  disabled={!pinValidation.isValid}
-                  className="w-full py-4 px-6 rounded-[14px] bg-[#102B50] text-white hover:bg-[#0B1F3A] font-bold text-base transition-all duration-200 shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full py-4 px-6 rounded-[14px] bg-[#102B50] text-white hover:bg-[#0B1F3A] font-bold text-base transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#FFC928]"
                 >
                   <span>Calculate My Solar Savings</span>
                   <span>→</span>
@@ -275,7 +286,11 @@ export const SolarSavingsCalculator: React.FC = () => {
             SECTION 2 & 3: Solar Calculation Results & Environmental Impact
             ========================================================== */}
         {hasCalculated && (
-          <div ref={resultsRef} className="space-y-12 animate-in fade-in duration-300">
+          <div
+            ref={resultsRef}
+            id="solar-calculation-results"
+            className="space-y-12 animate-in fade-in duration-300 scroll-mt-24 sm:scroll-mt-28"
+          >
             {/* Results Grid Header */}
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E8D8A5] pb-5">
               <div>
