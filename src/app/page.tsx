@@ -6,6 +6,7 @@ import HeroSection from "@/components/home/HeroSection";
 import ApproachSection from "@/components/home/ApproachSection";
 import FoundationalPreview from "@/components/home/FoundationalPreview";
 import FinancialValueSection from "@/components/home/FinancialValueSection";
+import SolarSavingsCalculator from "@/components/home/SolarSavingsCalculator";
 import MetricsBar from "@/components/home/MetricsBar";
 import FinalCTASection from "@/components/home/FinalCTASection";
 
@@ -19,7 +20,7 @@ export default function HomePage() {
         {/* 2. Core Thesis & Approach */}
         <ApproachSection />
 
-        {/* 3. System Architecture Foundation (3-card dark green gradient format) */}
+        {/* 3. System Architecture Foundation (3-card format) */}
         <FoundationalPreview />
 
         {/* 4. Financial Value Architecture */}
@@ -124,10 +125,13 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* 6. Metrics Bar */}
+        {/* 6. Solar Savings and EMI Calculator */}
+        <SolarSavingsCalculator />
+
+        {/* 7. Metrics Bar */}
         <MetricsBar />
 
-        {/* 7. Final Consultation CTA */}
+        {/* 8. Final Consultation CTA */}
         <FinalCTASection />
       </Container>
     </div>
