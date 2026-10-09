@@ -20,7 +20,7 @@ export const Card: React.FC<CardProps> = ({
     surface: "bg-[var(--bg-surface)] border border-[var(--border-light)] text-[var(--text-primary)]",
     subtle: "bg-[var(--bg-subtle)] border border-[var(--border-subtle)] text-[var(--text-primary)]",
     outline: "bg-transparent border border-[var(--border-light)] text-[var(--text-primary)]",
-    dark: "bg-[var(--bg-inverse)] border border-[var(--border-dark)] text-[var(--text-inverse)]",
+    dark: "bg-[var(--bg-subtle)] border border-[var(--border-light)] text-[var(--text-primary)]",
   };
 
   const paddingStyles = {

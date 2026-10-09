@@ -16,7 +16,7 @@ export default function HowItWorksPage() {
       <section className="py-16 sm:py-20 border-b border-[#E8D8A5]/40">
         <Container size="default">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[var(--radius-sm)] bg-[#102B50] text-[#FFC928] text-[11px] font-mono tracking-widest uppercase font-semibold">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[var(--radius-sm)] bg-[#FFF0B8] border border-[#E8D8A5] text-[#102B50] text-[11px] font-mono tracking-widest uppercase font-semibold">
               <span className="w-1.5 h-1.5 rounded-full bg-[#FFC928]"></span>
               THE PAYZERO METHODOLOGY
             </div>
@@ -38,35 +38,40 @@ export default function HowItWorksPage() {
       {/* Detailed Technical Workflow */}
       <section className="py-16 border-t border-[#E8D8A5]/40">
         <Container size="default">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-[#102B50] text-[#FFF8E7] rounded-[var(--radius-lg)] p-8 sm:p-12">
-            <div className="space-y-4">
-              <span className="text-xs font-mono text-[#FFC928] tracking-widest uppercase">
+          <div className="relative overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-[#FFF0B8] text-[#102B50] border border-[#E8D8A5] rounded-[var(--radius-lg)] p-8 sm:p-12 shadow-xs">
+            <div className="absolute inset-0 bg-grid-pattern opacity-60 pointer-events-none" />
+
+            <div className="relative z-10 space-y-4">
+              <span className="text-xs font-mono text-[#EAA900] tracking-widest uppercase font-bold flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FFC928]" />
                 ENGINEERING TRANSPARENCY
               </span>
-              <h2 className="font-heading text-3xl font-bold text-[#FFF8E7]">
+              <h2 className="font-heading text-3xl font-bold text-[#102B50]">
                 Zero Guesswork. Full Structural & Financial Clarity.
               </h2>
-              <p className="text-sm text-[#FFF8E7]/80 leading-relaxed">
+              <p className="text-sm text-[#536171] leading-relaxed">
                 Before any equipment is delivered to site, Payzero performs 3D LIDAR shading analysis, structural roof load stamps, electrical single-line diagrams, and utility tariff rate optimization.
               </p>
             </div>
 
-            <div className="space-y-4 font-mono text-xs text-[#FFF8E7]/90 bg-[#0B1F3A] p-6 rounded-[var(--radius-md)] border border-[#E8D8A5]/20">
-              <div className="flex justify-between border-b border-[#E8D8A5]/20 pb-2">
-                <span>SITE AUDIT & SHADING</span>
-                <span className="text-[#FFC928]">STAGE 01</span>
+            <div className="relative z-10 space-y-4 font-mono text-xs text-[#102B50] bg-[#FFFFFF] p-6 rounded-[var(--radius-md)] border border-[#E8D8A5] shadow-sm">
+              <div className="flex justify-between border-b border-[#E8D8A5] pb-2.5">
+                <span className="text-[#536171]">SITE AUDIT & SHADING</span>
+                <span className="text-[#EAA900] font-bold">STAGE 01</span>
               </div>
-              <div className="flex justify-between border-b border-[#E8D8A5]/20 pb-2">
-                <span>PE CANONICAL STAMP</span>
-                <span className="text-[#FFC928]">STAGE 02</span>
+              <div className="flex justify-between border-b border-[#E8D8A5] pb-2.5">
+                <span className="text-[#536171]">PE CANONICAL STAMP</span>
+                <span className="text-[#EAA900] font-bold">STAGE 02</span>
               </div>
-              <div className="flex justify-between border-b border-[#E8D8A5]/20 pb-2">
-                <span>AHJ PERMITTING & GRID</span>
-                <span className="text-[#FFC928]">STAGE 03</span>
+              <div className="flex justify-between border-b border-[#E8D8A5] pb-2.5">
+                <span className="text-[#536171]">AHJ PERMITTING & GRID</span>
+                <span className="text-[#EAA900] font-bold">STAGE 03</span>
               </div>
-              <div className="flex justify-between pb-1">
-                <span>PTO ACTIVATION</span>
-                <span className="text-[#FFC928]">STAGE 04</span>
+              <div className="flex justify-between pt-0.5 items-center">
+                <span className="text-[#536171]">PTO ACTIVATION</span>
+                <span className="text-[#102B50] font-extrabold bg-[#FFF0B8] px-2 py-0.5 rounded-[var(--radius-sm)] border border-[#E8D8A5]">
+                  STAGE 04
+                </span>
               </div>
             </div>
           </div>

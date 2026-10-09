@@ -185,13 +185,13 @@ export const Header: React.FC = () => {
 
         {/* Mobile Navigation Drawer */}
         {isMobileMenuOpen && (
-          <div className="md:hidden pt-5 pb-4 border-t border-[#E8D8A5]/30 mt-4 space-y-4 bg-[#102B50]/95 backdrop-blur-xl rounded-xl p-4 animate-in fade-in duration-200 text-white">
+          <div className="md:hidden pt-5 pb-4 border border-[#E8D8A5] mt-4 space-y-4 bg-[#FFF8E7]/95 backdrop-blur-xl rounded-xl p-4 animate-in fade-in duration-200 text-[#102B50] shadow-xl">
             <nav className="flex flex-col space-y-3">
               {NAV_ITEMS.map((link) => (
                 <Link
                   key={link.id}
                   href={link.href || "#"}
-                  className="text-base font-medium text-white/90 hover:text-[#FFC928] py-1"
+                  className="text-base font-semibold text-[#102B50] hover:text-[#EAA900] py-1"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
@@ -201,7 +201,7 @@ export const Header: React.FC = () => {
             <div className="pt-2">
               <Link
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 w-full px-5 py-2.5 text-sm font-semibold text-[#102B50] bg-[#FFC928] hover:bg-[#FFD84D] rounded-full transition-all"
+                className="inline-flex items-center justify-center gap-2 w-full px-5 py-2.5 text-sm font-semibold text-white bg-[#102B50] hover:bg-[#0B1F3A] rounded-full transition-all shadow-md"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <span>Get a Consultation</span>

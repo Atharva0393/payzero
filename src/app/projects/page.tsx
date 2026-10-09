@@ -16,7 +16,7 @@ export default function ProjectsPage() {
       <section className="py-16 sm:py-20 border-b border-[#E8D8A5]/40">
         <Container size="default">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[var(--radius-sm)] bg-[#102B50] text-[#FFC928] text-[11px] font-mono tracking-widest uppercase font-semibold">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[var(--radius-sm)] bg-[#FFF0B8] border border-[#E8D8A5] text-[#102B50] text-[11px] font-mono tracking-widest uppercase font-semibold">
               <span className="w-1.5 h-1.5 rounded-full bg-[#FFC928]"></span>
               FEATURED PORTFOLIO
             </div>

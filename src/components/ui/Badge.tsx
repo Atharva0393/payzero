@@ -20,9 +20,9 @@ export const Badge: React.FC<BadgeProps> = ({
     outline:
       "bg-transparent text-[#102B50] border-[#102B50]/30",
     dark:
-      "bg-[#102B50] text-[#FFF8E7] border-[#E8D8A5]/30",
+      "bg-[#FFF8E7] text-[#102B50] border-[#E8D8A5]",
     accent:
-      "bg-[#102B50] text-[#FFC928] border-[#FFC928]/40",
+      "bg-[#FFC928] text-[#102B50] border-[#EAA900]/40",
   };
 
   return <span className={`${base} ${variants[variant]} ${className}`}>{children}</span>;

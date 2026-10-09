@@ -10,11 +10,11 @@ const PROCESS_STEPS: Step[] = [
     description:
       "Understand the property architecture, energy consumption profile, available installation area, and project goals.",
     colors: {
-      bg: "bg-[#102B50]",
-      text: "text-[#FFC928]",
-      title: "text-[#FFFFFF]",
-      description: "text-[#FFF8E7]/80",
-      border: "border-[#FFC928]/25",
+      bg: "bg-[#FFF8E7]",
+      text: "text-[#EAA900]",
+      title: "text-[#102B50]",
+      description: "text-[#536171]",
+      border: "border-[#E8D8A5]",
       pin: "text-[#102B50]",
     },
   },
@@ -24,7 +24,7 @@ const PROCESS_STEPS: Step[] = [
       "Develop a purpose-built solar system tailored around the property's physical characteristics and power requirements.",
     colors: {
       bg: "bg-[#FFFFFF]",
-      text: "text-[#FFC928]",
+      text: "text-[#EAA900]",
       title: "text-[#102B50]",
       description: "text-[#536171]",
       border: "border-[#E8D8A5]",
@@ -36,11 +36,11 @@ const PROCESS_STEPS: Step[] = [
     description:
       "Coordinate the physical installation and electrical integration with meticulous attention to execution quality.",
     colors: {
-      bg: "bg-[#102B50]",
-      text: "text-[#FFC928]",
-      title: "text-[#FFFFFF]",
-      description: "text-[#FFF8E7]/80",
-      border: "border-[#FFC928]/25",
+      bg: "bg-[#FFF8E7]",
+      text: "text-[#EAA900]",
+      title: "text-[#102B50]",
+      description: "text-[#536171]",
+      border: "border-[#E8D8A5]",
       pin: "text-[#102B50]",
     },
   },
@@ -50,7 +50,7 @@ const PROCESS_STEPS: Step[] = [
       "Commission the solar infrastructure, verify system telemetry, and transition the property into live energy generation.",
     colors: {
       bg: "bg-[#FFFFFF]",
-      text: "text-[#FFC928]",
+      text: "text-[#EAA900]",
       title: "text-[#102B50]",
       description: "text-[#536171]",
       border: "border-[#E8D8A5]",
