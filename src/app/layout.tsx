@@ -28,20 +28,21 @@ const monoFont = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://payzeroenergy.com"),
   title: {
-    default: "Payzero | High-Performance Solar Infrastructure & Clean Energy Assets",
+    default: "Payzero | Let the Sun Pay Your Energy Bills",
     template: "%s | Payzero",
   },
   description:
-    "Payzero designs and deploys utility-grade solar energy architecture, battery storage systems, and zero-loss power infrastructure for commercial and premium residential clients.",
+    "Payzero makes solar energy simple with expert site surveys, custom solar system design, quality components, professional installation, net metering support, and subsidy assistance.",
   keywords: [
     "Payzero",
+    "Solar Energy Expert",
     "Commercial Solar Infrastructure",
-    "Precision Energy Systems",
+    "Residential Solar Rooftop",
+    "Solar Net Metering",
+    "Solar Subsidy Assistance",
     "Industrial Battery Storage",
-    "Solar Capital Investments",
-    "Architectural Solar Integration",
   ],
-  authors: [{ name: "Payzero Infrastructure" }],
+  authors: [{ name: "Payzero Energy Expert" }],
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -58,9 +59,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://payzeroenergy.com",
-    title: "Payzero | High-Performance Solar Infrastructure",
+    title: "Payzero | Let the Sun Pay Your Energy Bills",
     description:
-      "Utility-grade energy architecture engineered for long-term independence, cash-flow optimization, and grid resilience.",
+      "Payzero makes solar energy simple with expert site surveys, custom solar system design, quality components, professional installation, net metering support, and subsidy assistance.",
     siteName: "Payzero",
     images: [
       {
@@ -73,8 +74,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Payzero Infrastructure",
-    description: "Engineering high-yield solar energy architecture and battery storage systems.",
+    title: "Payzero | Let the Sun Pay Your Energy Bills",
+    description:
+      "Payzero makes solar energy simple with expert site surveys, custom solar system design, quality components, professional installation, net metering support, and subsidy assistance.",
     images: ["/og-image.png"],
   },
   robots: {

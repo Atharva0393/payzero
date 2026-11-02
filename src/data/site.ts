@@ -28,9 +28,9 @@ export interface SiteConfig {
 export const SITE_CONFIG: SiteConfig = {
   name: "PAYZERO",
   legalName: "Pay Zero Energy Expert Private Limited",
-  tagline: "High-Performance Solar Infrastructure & Clean Energy Assets",
+  tagline: "Let the Sun Pay Your Energy Bills.",
   description:
-    "Payzero designs and deploys utility-grade solar energy architecture, battery storage systems, and turnkey power infrastructure for commercial and residential clients.",
+    "Payzero makes solar energy simple with expert site surveys, custom solar system design, quality components, professional installation, net metering support, and subsidy assistance.",
   contactPerson: "Vivek Rathod",
   phone: "9561087785",
   phoneDisplay: "+91 95610 87785",

@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Payzero – Solar Energy Expert",
     short_name: "Payzero",
     description:
-      "High-Performance Solar Infrastructure & Clean Energy Assets by Pay Zero Energy Expert Private Limited",
+      "Let the Sun Pay Your Energy Bills – Pay Zero Energy Expert Private Limited",
     start_url: "/",
     display: "standalone",
     background_color: "#FFF8E7",

@@ -14,18 +14,13 @@ export const HeroSection: React.FC = () => {
           <div className="max-w-3xl mx-auto flex flex-col items-center">
             {/* Main Headline Lockup */}
             <h1 className="tracking-tight text-center">
-              <span className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-[52px] xl:text-[62px] text-white leading-none block whitespace-nowrap">
-                Power Your Property.
+              <span className="font-heading font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-[72px] xl:text-[84px] text-white tracking-widest uppercase block drop-shadow-md leading-none">
+                PAYZERO
               </span>
-              <span className="font-heading italic font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-[46px] xl:text-[54px] text-[#FFC928] leading-tight tracking-tight mt-0.5 sm:mt-1 block">
-                Own Your Energy.
+              <span className="font-heading italic font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-[40px] xl:text-[46px] text-[#FFC928] leading-tight tracking-tight mt-3 sm:mt-4 block drop-shadow-sm">
+                Let the Sun Pay Your Energy Bills.
               </span>
             </h1>
-
-            {/* Supporting Copy */}
-            <p className="text-xs sm:text-sm md:text-base text-white/90 leading-relaxed font-normal max-w-md sm:max-w-lg mx-auto mt-4 sm:mt-5">
-              Thoughtfully designed solar systems for homes and businesses, built around how you use your property and energy.
-            </p>
 
             {/* Single Primary CTA */}
             <div className="mt-6 sm:mt-8">
