@@ -7,6 +7,7 @@ import ApproachSection from "@/components/home/ApproachSection";
 import FoundationalPreview from "@/components/home/FoundationalPreview";
 import FinancialValueSection from "@/components/home/FinancialValueSection";
 import SolarSavingsCalculator from "@/components/home/SolarSavingsCalculator";
+import ProcessSection from "@/components/home/ProcessSection";
 import MetricsBar from "@/components/home/MetricsBar";
 import FinalCTASection from "@/components/home/FinalCTASection";
 
@@ -128,10 +129,13 @@ export default function HomePage() {
         {/* 6. Solar Savings and EMI Calculator */}
         <SolarSavingsCalculator />
 
-        {/* 7. Metrics Bar */}
+        {/* 7. Our Work Process (6-Step Installation Journey) */}
+        <ProcessSection />
+
+        {/* 8. Metrics Bar */}
         <MetricsBar />
 
-        {/* 8. Final Consultation CTA */}
+        {/* 9. Final Consultation CTA */}
         <FinalCTASection />
       </Container>
     </div>
