@@ -1,6 +1,7 @@
 export interface SiteConfig {
   name: string;
   legalName: string;
+  companyName: string;
   tagline: string;
   description: string;
   contactPerson: string;
@@ -11,6 +12,7 @@ export interface SiteConfig {
   emailHref: string;
   addressLines: string[];
   fullAddress: string;
+  googleMapsUrl: string;
   gstin: string;
   logo: {
     navy: string;
@@ -34,6 +36,7 @@ export interface SiteConfig {
 export const SITE_CONFIG: SiteConfig = {
   name: "PAYZERO",
   legalName: "Pay Zero Energy Expert Private Limited",
+  companyName: "PAY ZERO ENERGY EXPERT PVT LTD",
   tagline: "Let the Sun Pay Your Energy Bills.",
   description:
     "Payzero makes solar energy simple with expert site surveys, custom solar system design, quality components, professional installation, net metering support, and subsidy assistance.",
@@ -44,13 +47,13 @@ export const SITE_CONFIG: SiteConfig = {
   email: "pay0energy@gmail.com",
   emailHref: "mailto:pay0energy@gmail.com",
   addressLines: [
-    "Shop No. 07, Shopping Complex, B Sector,",
-    "in front of Raodev Hospital, CIDCO N-1,",
-    "Chhatrapati Sambhajinagar – 431003,",
-    "Maharashtra, India",
+    "H-5/5, MIDC Industrial Area,",
+    "Chilkalthana, Chhatrapati Sambhajinagar,",
+    "Maharashtra 431008",
   ],
   fullAddress:
-    "Shop No. 07, Shopping Complex, B Sector, in front of Raodev Hospital, CIDCO N-1, Chhatrapati Sambhajinagar – 431003, Maharashtra, India",
+    "H-5/5, MIDC Industrial Area, Chilkalthana, Chhatrapati Sambhajinagar, Maharashtra 431008",
+  googleMapsUrl: "https://maps.app.goo.gl/vYYfyBuMejHaaK9i6",
   gstin: "27AAQCP1719G1Z7",
   logo: {
     navy: "/logo/payzero-logo.png",

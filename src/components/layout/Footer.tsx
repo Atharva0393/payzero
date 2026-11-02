@@ -159,17 +159,31 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 4: Physical Office */}
+          {/* Column 4: Physical Office & Google Maps */}
           <div className="space-y-4">
             <h4 className="text-xs font-mono tracking-widest text-[#FFC928] uppercase font-semibold">
               Office
             </h4>
-            <div className="text-sm text-[#FFF8E7]/80 space-y-1.5 leading-relaxed font-normal">
-              <p>Shop No. 07, Shopping Complex, B Sector,</p>
-              <p>in front of Raodev Hospital, CIDCO N-1,</p>
-              <p>Chhatrapati Sambhajinagar – 431003,</p>
-              <p>Maharashtra, India</p>
+            <div className="font-heading text-xs font-bold text-[#FFC928] uppercase tracking-wide">
+              {SITE_CONFIG.companyName}
             </div>
+            <a
+              href={SITE_CONFIG.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View Payzero office location on Google Maps"
+              className="group block text-sm text-[#FFF8E7]/80 hover:text-white space-y-1.5 leading-relaxed font-normal transition-colors"
+            >
+              {SITE_CONFIG.addressLines.map((line, idx) => (
+                <p key={idx}>{line}</p>
+              ))}
+              <div className="pt-2 flex items-center gap-1.5 text-xs font-mono font-semibold text-[#FFC928] group-hover:text-[#FFD84D] transition-colors">
+                <svg className="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" />
+                </svg>
+                <span>View on Google Maps →</span>
+              </div>
+            </a>
           </div>
         </div>
 

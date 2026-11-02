@@ -16,7 +16,7 @@ export const SolarSavingsCalculator: React.FC = () => {
   const resultsRef = useRef<HTMLDivElement>(null);
 
   // User input states
-  const [pinCode, setPinCode] = useState<string>("431003"); // Default to Chhatrapati Sambhajinagar PIN
+  const [pinCode, setPinCode] = useState<string>("431008"); // Default to Chhatrapati Sambhajinagar PIN
   const [monthlyBill, setMonthlyBill] = useState<number>(2500);
   const [pinTouched, setPinTouched] = useState<boolean>(false);
   const [hasCalculated, setHasCalculated] = useState<boolean>(true); // Pre-calculate initial state for immediate utility
@@ -27,7 +27,7 @@ export const SolarSavingsCalculator: React.FC = () => {
 
   // Computed results from centralised calculation engine
   const [results, setResults] = useState<CalculationResult>(() =>
-    calculateSolarPotential(2500, "431003")
+    calculateSolarPotential(2500, "431008")
   );
 
   // Smoothly scroll to the results section when calculate is triggered
@@ -198,7 +198,7 @@ export const SolarSavingsCalculator: React.FC = () => {
                     value={pinCode}
                     onChange={handlePinChange}
                     onBlur={() => setPinTouched(true)}
-                    placeholder="Enter 6-digit PIN code (e.g. 431003)"
+                    placeholder="Enter 6-digit PIN code (e.g. 431008)"
                     className={`w-full px-4 py-3.5 rounded-[14px] bg-[#FFF8E7] border text-base font-mono font-bold text-[#102B50] placeholder:text-[#536171]/50 focus:outline-none focus:ring-2 transition-all ${
                       pinTouched && !pinValidation.isValid
                         ? "border-red-400 focus:ring-red-200"

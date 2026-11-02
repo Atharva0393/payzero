@@ -3,6 +3,7 @@ import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import Logo from "@/components/layout/Logo";
+import { SITE_CONFIG } from "@/data/site";
 
 export const metadata = {
   title: "About Pay Zero Energy Expert Private Limited | Solar EPC Solutions",
@@ -789,10 +790,24 @@ export default function AboutPage() {
                     <div className="text-[11px] font-mono tracking-wider text-[#536171] uppercase">
                       Registered Office Address
                     </div>
-                    <div className="text-[#102B50] leading-relaxed mt-0.5">
-                      Shop No. 07, Shopping Complex, B Sector, in front of Raodev Hospital, CIDCO N-1,
-                      Chhatrapati Sambhajinagar – 431003, Maharashtra, India.
-                    </div>
+                    <a
+                      href={SITE_CONFIG.googleMapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open Payzero registered office on Google Maps"
+                      className="group block text-[#102B50] hover:text-[#EAA900] leading-relaxed mt-0.5 transition-colors"
+                    >
+                      <div className="font-heading text-xs font-bold text-[#102B50] mb-0.5">
+                        {SITE_CONFIG.companyName}
+                      </div>
+                      <p>{SITE_CONFIG.fullAddress}</p>
+                      <div className="pt-1.5 flex items-center gap-1.5 text-xs font-mono font-semibold text-[#EAA900] group-hover:underline">
+                        <svg className="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" />
+                        </svg>
+                        <span>View on Google Maps →</span>
+                      </div>
+                    </a>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-[#E8D8A5]">

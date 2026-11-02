@@ -118,7 +118,7 @@ export interface SolarSavingsInformationProps {
 
 export const SolarSavingsInformation: React.FC<SolarSavingsInformationProps> = ({
   currentKw = 2.5,
-  currentPin = "431003",
+  currentPin = "431008",
 }) => {
   return (
     <div className="pt-12 sm:pt-16 space-y-12 sm:space-y-16">
