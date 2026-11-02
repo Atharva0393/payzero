@@ -99,18 +99,20 @@ export const Header: React.FC = () => {
       }`}
     >
       <Container size="default">
-        <div className="flex items-center justify-between">
+        <div className="relative flex items-center justify-between">
           {/* Top-Left: PAYZERO Official Logo */}
-          <Logo
-            variant={isDarkSection ? "white" : "navy"}
-            size="md"
-            priority={true}
-            imageClassName="h-9 sm:h-11 w-auto"
-            className="transition-transform duration-300 group-hover:scale-[1.02]"
-          />
+          <div className="flex items-center z-10">
+            <Logo
+              variant={isDarkSection ? "white" : "navy"}
+              size="md"
+              priority={true}
+              imageClassName="h-9 sm:h-11 w-auto"
+              className="transition-transform duration-300 group-hover:scale-[1.02]"
+            />
+          </div>
 
-          {/* Top-Center: Limelight Navigation Bar */}
-          <div className="hidden md:flex items-center">
+          {/* Top-Center: Limelight Navigation Bar (Dead-center aligned on the page's vertical centerline) */}
+          <div className="hidden md:flex items-center justify-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto">
             <LimelightNav
               items={NAV_ITEMS}
               activeIndex={activeSectionIndex}
@@ -123,7 +125,7 @@ export const Header: React.FC = () => {
           </div>
 
           {/* Top-Right: Consultation Button */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden md:flex items-center justify-end z-10">
             <Link
               href="#contact"
               className={`inline-flex items-center gap-1.5 px-5 py-2 text-sm font-medium rounded-full transition-all duration-300 focus:outline-none ${
@@ -140,7 +142,7 @@ export const Header: React.FC = () => {
           {/* Mobile Menu Toggle */}
           <button
             type="button"
-            className={`md:hidden inline-flex items-center justify-center p-2 rounded-md transition-colors duration-300 focus:outline-none ${
+            className={`md:hidden inline-flex items-center justify-center p-2 rounded-md transition-colors duration-300 focus:outline-none z-10 ${
               isDarkSection
                 ? "text-white hover:bg-white/10"
                 : "text-[#102B50] hover:bg-[#102B50]/10"
