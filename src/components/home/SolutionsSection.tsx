@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Badge from "@/components/ui/Badge";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 
@@ -13,6 +14,7 @@ interface SolutionItem {
   imageLabel: string;
   imageSublabel: string;
   imageAspect: "4/3" | "16/9" | "21/9";
+  imageSrc?: string;
 }
 
 const SOLUTIONS_DATA: SolutionItem[] = [
@@ -27,6 +29,7 @@ const SOLUTIONS_DATA: SolutionItem[] = [
     imageLabel: "PAYZERO // RESIDENTIAL SOLAR ASSET",
     imageSublabel: "Modern private residential estate with integrated rooftop solar architecture",
     imageAspect: "4/3",
+    imageSrc: "/services/residential-rooftop-solar.webp",
   },
   {
     id: "commercial",
@@ -39,18 +42,20 @@ const SOLUTIONS_DATA: SolutionItem[] = [
     imageLabel: "PAYZERO // COMMERCIAL SOLAR INFRASTRUCTURE",
     imageSublabel: "High-capacity commercial rooftop solar array installation",
     imageAspect: "4/3",
+    imageSrc: "/services/commercial-solar-solutions.webp",
   },
   {
     id: "energy",
     number: "03",
     category: "ENERGY SOLUTIONS",
-    title: "Storage & Microgrid Systems",
+    title: "Storage & Ground Mount Systems",
     description:
-      "Comprehensive energy infrastructure covering industrial battery storage, load-balancing telemetry, microgrids, and long-term system planning.",
+      "Comprehensive energy infrastructure covering utility-scale ground mounts, battery storage (BESS), load-balancing telemetry, and microgrids.",
     href: "#contact",
-    imageLabel: "PAYZERO // BESS & MICROGRID SYSTEM",
-    imageSublabel: "Industrial battery energy storage and microgrid control infrastructure",
+    imageLabel: "PAYZERO // GROUND MOUNT & BESS SYSTEM",
+    imageSublabel: "Utility-scale ground mounted solar array and battery storage infrastructure",
     imageAspect: "4/3",
+    imageSrc: "/services/ground-mounted-solar.webp",
   },
 ];
 
@@ -126,14 +131,26 @@ export const SolutionsSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* Column 3: Large Architectural Image Placeholder */}
+              {/* Column 3: Photographic Image or Fallback */}
               <div className="lg:col-span-5">
-                <ImagePlaceholder
-                  aspectRatio={item.imageAspect}
-                  label={item.imageLabel}
-                  sublabel={item.imageSublabel}
-                  className="w-full shadow-xs"
-                />
+                {item.imageSrc ? (
+                  <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden border border-[#E8D8A5] shadow-xs bg-[#FFF0B8]/40">
+                    <Image
+                      src={item.imageSrc}
+                      alt={item.title}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 450px"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                ) : (
+                  <ImagePlaceholder
+                    aspectRatio={item.imageAspect}
+                    label={item.imageLabel}
+                    sublabel={item.imageSublabel}
+                    className="w-full shadow-xs"
+                  />
+                )}
               </div>
             </div>
           </article>

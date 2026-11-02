@@ -23,6 +23,12 @@ export interface SiteConfig {
     primary: string;
     primaryHref: string;
   };
+  socialLinks: Array<{
+    name: string;
+    href: string;
+    platform: "facebook" | "x" | "linkedin" | "instagram";
+    ariaLabel: string;
+  }>;
 }
 
 export const SITE_CONFIG: SiteConfig = {
@@ -62,4 +68,30 @@ export const SITE_CONFIG: SiteConfig = {
     primary: "Get a Consultation",
     primaryHref: "/#contact",
   },
+  socialLinks: [
+    {
+      name: "Facebook",
+      href: "https://facebook.com/payzeroenergy",
+      platform: "facebook",
+      ariaLabel: "Follow Payzero on Facebook",
+    },
+    {
+      name: "Twitter / X",
+      href: "https://x.com/payzeroenergy",
+      platform: "x",
+      ariaLabel: "Follow Payzero on Twitter / X",
+    },
+    {
+      name: "LinkedIn",
+      href: "https://linkedin.com/company/payzeroenergy",
+      platform: "linkedin",
+      ariaLabel: "Connect with Payzero on LinkedIn",
+    },
+    {
+      name: "Instagram",
+      href: "https://instagram.com/payzeroenergy",
+      platform: "instagram",
+      ariaLabel: "Follow Payzero on Instagram",
+    },
+  ],
 };

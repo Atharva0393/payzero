@@ -6,6 +6,7 @@ import HeroSection from "@/components/home/HeroSection";
 import ApproachSection from "@/components/home/ApproachSection";
 import FoundationalPreview from "@/components/home/FoundationalPreview";
 import FinancialValueSection from "@/components/home/FinancialValueSection";
+import EpcServicesSection from "@/components/home/EpcServicesSection";
 import SolarSavingsCalculator from "@/components/home/SolarSavingsCalculator";
 import ProcessSection from "@/components/home/ProcessSection";
 import MetricsBar from "@/components/home/MetricsBar";
@@ -27,7 +28,10 @@ export default function HomePage() {
         {/* 4. Financial Value Architecture */}
         <FinancialValueSection />
 
-        {/* 5. Navigation Hub to Dedicated Subpages */}
+        {/* 5. What We Do & Turnkey Solar EPC Services */}
+        <EpcServicesSection />
+
+        {/* 6. Navigation Hub to Dedicated Subpages */}
         <section className="py-16 sm:py-24 border-t border-[var(--border-light)]">
           <div className="max-w-3xl space-y-4 mb-12">
             <Badge variant="outline">EXPLORE PAYZERO</Badge>
