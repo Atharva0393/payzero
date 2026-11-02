@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Container from "@/components/ui/Container";
 import { LimelightNav, NavItem } from "@/components/ui/limelight-nav";
+import Logo from "@/components/layout/Logo";
 
 const NAV_ITEMS: NavItem[] = [
   { id: "solutions", label: "Solutions", href: "/solutions" },
@@ -99,16 +100,14 @@ export const Header: React.FC = () => {
     >
       <Container size="default">
         <div className="flex items-center justify-between">
-          {/* Top-Left: PAYZERO Wordmark */}
-          <Link
-            href="/"
-            className={`group flex items-center text-xl sm:text-2xl font-extrabold tracking-widest uppercase focus:outline-none font-heading transition-colors duration-300 ${
-              isDarkSection ? "text-white" : "text-[#102B50]"
-            }`}
-            aria-label="Payzero Homepage"
-          >
-            PAYZERO
-          </Link>
+          {/* Top-Left: PAYZERO Official Logo */}
+          <Logo
+            variant={isDarkSection ? "white" : "navy"}
+            size="md"
+            priority={true}
+            imageClassName="h-9 sm:h-11 w-auto"
+            className="transition-transform duration-300 group-hover:scale-[1.02]"
+          />
 
           {/* Top-Center: Limelight Navigation Bar */}
           <div className="hidden md:flex items-center">
@@ -185,7 +184,18 @@ export const Header: React.FC = () => {
 
         {/* Mobile Navigation Drawer */}
         {isMobileMenuOpen && (
-          <div className="md:hidden pt-5 pb-4 border border-[#E8D8A5] mt-4 space-y-4 bg-[#FFF8E7]/95 backdrop-blur-xl rounded-xl p-4 animate-in fade-in duration-200 text-[#102B50] shadow-xl">
+          <div className="md:hidden pt-4 pb-4 border border-[#E8D8A5] mt-4 space-y-4 bg-[#FFF8E7]/95 backdrop-blur-xl rounded-xl p-4 animate-in fade-in duration-200 text-[#102B50] shadow-xl">
+            <div className="flex items-center justify-between pb-3 border-b border-[#E8D8A5]/60">
+              <Logo
+                variant="navy"
+                size="sm"
+                imageClassName="h-8 w-auto"
+                onClick={() => setIsMobileMenuOpen(false)}
+              />
+              <span className="text-[10px] font-mono tracking-widest uppercase text-[#536171] font-semibold">
+                Solar Energy Expert
+              </span>
+            </div>
             <nav className="flex flex-col space-y-3">
               {NAV_ITEMS.map((link) => (
                 <Link

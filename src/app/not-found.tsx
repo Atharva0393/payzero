@@ -1,12 +1,18 @@
 import React from "react";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
+import Logo from "@/components/layout/Logo";
 
 export default function NotFound() {
   return (
     <main className="min-h-screen flex items-center justify-center pt-24 pb-20 bg-[var(--bg-primary)] text-[var(--text-primary)]">
       <Container size="default">
         <div className="max-w-xl mx-auto text-center space-y-8 bg-[var(--bg-surface)] border border-[var(--border-light)] rounded-[24px] p-8 sm:p-14 shadow-md">
+          {/* Logo */}
+          <div className="flex justify-center">
+            <Logo variant="navy" size="md" imageClassName="h-12 w-auto" />
+          </div>
+
           {/* Eyebrow */}
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[var(--radius-sm)] bg-[var(--bg-soft-white)] border border-[var(--border-light)] text-[11px] font-mono tracking-widest text-[#102B50] uppercase font-semibold">
             <span className="w-1.5 h-1.5 rounded-full bg-[#FFC928]" />

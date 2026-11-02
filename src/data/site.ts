@@ -12,6 +12,12 @@ export interface SiteConfig {
   addressLines: string[];
   fullAddress: string;
   gstin: string;
+  logo: {
+    navy: string;
+    white: string;
+    icon: string;
+    alt: string;
+  };
   navLinks: Array<{ label: string; href: string }>;
   cta: {
     primary: string;
@@ -40,6 +46,12 @@ export const SITE_CONFIG: SiteConfig = {
   fullAddress:
     "Shop No. 07, Shopping Complex, B Sector, in front of Raodev Hospital, CIDCO N-1, Chhatrapati Sambhajinagar – 431003, Maharashtra, India",
   gstin: "27AAQCP1719G1Z7",
+  logo: {
+    navy: "/logo/payzero-logo.png",
+    white: "/logo/payzero-logo-white.png",
+    icon: "/logo/payzero-icon.png",
+    alt: "Payzero – Solar Energy Expert",
+  },
   navLinks: [
     { label: "Solutions", href: "/solutions" },
     { label: "How It Works", href: "/how-it-works" },

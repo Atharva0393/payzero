@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
-import Button from "@/components/ui/Button";
+import Logo from "@/components/layout/Logo";
 
 export const Footer: React.FC = () => {
   return (
@@ -13,14 +13,11 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-16 border-b border-[#E8D8A5]/20">
           {/* Column 1: Brand & Official Entity */}
           <div className="space-y-4">
-            <Link href="/" className="inline-flex items-center gap-2.5 text-xl font-bold tracking-tight text-[#FFF8E7]">
-              <span className="w-7 h-7 bg-[#FFC928] text-[#102B50] font-mono text-xs flex items-center justify-center font-bold rounded-[var(--radius-sm)]">
-                P
-              </span>
-              <span className="font-heading tracking-tighter text-xl uppercase font-extrabold text-[#FFF8E7]">
-                PAYZERO<span className="text-[#FFC928]">.</span>
-              </span>
-            </Link>
+            <Logo
+              variant="white"
+              size="lg"
+              imageClassName="h-12 sm:h-14 w-auto"
+            />
             <div className="font-heading text-sm font-semibold text-[#FFC928]">
               Pay Zero Energy Expert Private Limited
             </div>

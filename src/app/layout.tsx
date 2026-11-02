@@ -26,6 +26,7 @@ const monoFont = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://payzeroenergy.com"),
   title: {
     default: "Payzero | High-Performance Solar Infrastructure & Clean Energy Assets",
     template: "%s | Payzero",
@@ -41,19 +42,40 @@ export const metadata: Metadata = {
     "Architectural Solar Integration",
   ],
   authors: [{ name: "Payzero Infrastructure" }],
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    other: [
+      { rel: "icon", url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { rel: "icon", url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://payzero.com",
+    url: "https://payzeroenergy.com",
     title: "Payzero | High-Performance Solar Infrastructure",
     description:
       "Utility-grade energy architecture engineered for long-term independence, cash-flow optimization, and grid resilience.",
     siteName: "Payzero",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Payzero – Solar Energy Expert",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Payzero Infrastructure",
     description: "Engineering high-yield solar energy architecture and battery storage systems.",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,

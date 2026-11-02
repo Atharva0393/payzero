@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
+import Logo from "@/components/layout/Logo";
 
 export const metadata = {
   title: "About Pay Zero Energy Expert Private Limited | Solar EPC Solutions",
@@ -759,9 +759,11 @@ export default function AboutPage() {
 
               {/* Right Column: Authoritative Corporate Profile Details */}
               <div className="lg:col-span-6 bg-[#FFFFFF] border border-[#E8D8A5] rounded-[20px] p-7 sm:p-8 space-y-5 shadow-sm">
-                <div className="font-mono text-xs text-[#EAA900] uppercase font-bold tracking-wider pb-3 border-b border-[#E8D8A5] flex items-center justify-between">
-                  <span>OFFICIAL CORPORATE CREDENTIALS</span>
-                  <span className="text-[#102B50]">MAHARASHTRA, INDIA</span>
+                <div className="pb-4 border-b border-[#E8D8A5] flex items-center justify-between">
+                  <Logo variant="navy" size="sm" imageClassName="h-9 w-auto" href={null} />
+                  <span className="font-mono text-xs text-[#EAA900] uppercase font-bold tracking-wider">
+                    MAHARASHTRA, INDIA
+                  </span>
                 </div>
 
                 <div className="space-y-4 text-sm">
