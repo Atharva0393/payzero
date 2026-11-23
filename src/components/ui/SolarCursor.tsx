@@ -4,10 +4,12 @@ import React, { useEffect, useRef, useState } from "react";
 
 /**
  * Payzero Custom Solar-Inspired Mouse Cursor
- *
- * Replaces default cursor on fine-pointer (desktop) devices with a branded,
- * high-performance solar panel module cursor with 0ms lag tracking.
- * Hotspot is locked at the exact top-left apex (0, 0) for pinpoint precision.
+ * Refined Miniature Solar Installation Design:
+ * - Tilted Solar Navy photovoltaic panel with crisp gold/white grid lines.
+ * - Golden-yellow sun rising behind the upper panel edge with delicate sun rays.
+ * - Structural golden ground-mount support stand beneath the panel.
+ * - Precision pointer apex at (0, 0) with a sunlight glint for pinpoint accuracy.
+ * - Smooth 60/120fps hardware-accelerated tracking with zero React re-render lag during movement.
  */
 export default function SolarCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -121,94 +123,151 @@ export default function SolarCursor() {
           className="overflow-visible"
         >
           <defs>
-            {/* Crisp drop shadow ensuring optimal contrast on both Solar Cream and Dark Navy */}
-            <filter id="payzeroCursorShadow" x="-2" y="-2" width="38" height="38" filterUnits="userSpaceOnUse">
+            {/* Subtle soft shadow providing high contrast against cream, white and navy */}
+            <filter id="solarInstallShadow" x="-2" y="-2" width="38" height="38" filterUnits="userSpaceOnUse">
               <feDropShadow
-                dx="1"
-                dy="1.5"
-                stdDeviation="1.5"
+                dx="0.8"
+                dy="1.2"
+                stdDeviation={isHovered ? 1.6 : 1.1}
                 floodColor={isHovered ? "#FFC928" : "#000000"}
-                floodOpacity={isHovered ? 0.6 : 0.35}
+                floodOpacity={isHovered ? 0.55 : 0.32}
               />
             </filter>
 
+            {/* Radiant Sun Gradient */}
+            <linearGradient id="sunDiskGradient" x1="18" y1="2" x2="23" y2="10" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor={isHovered ? "#FFF080" : "#FFD84D"} />
+              <stop offset="100%" stopColor={isHovered ? "#FFB300" : "#FFA000"} />
+            </linearGradient>
+
             {/* Photovoltaic Solar Cell Gradient */}
-            <linearGradient id="pvCellGradient" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stopColor={isHovered ? "#245188" : "#1B3D6B"} />
-              <stop offset="100%" stopColor={isHovered ? "#123058" : "#0E2340"} />
+            <linearGradient id="pvCellGradient" x1="3" y1="6" x2="26" y2="28" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor={isHovered ? "#234E82" : "#193B68"} />
+              <stop offset="100%" stopColor={isHovered ? "#112F56" : "#0D203B"} />
             </linearGradient>
           </defs>
 
-          <g filter="url(#payzeroCursorShadow)">
-            {/* Outer aluminum panel housing in Solar Navy with subtle contrast hairline */}
+          <g filter="url(#solarInstallShadow)">
+            {/* 1. Delicate Sun Rays radiating behind the solar panel */}
+            <g
+              stroke={isHovered ? "#FFD84D" : "#FFC928"}
+              strokeWidth={isHovered ? "0.9" : "0.75"}
+              strokeLinecap="round"
+            >
+              <line x1="20" y1="2" x2="20" y2="0.6" />
+              <line x1="23.5" y1="3.2" x2="24.8" y2="1.8" />
+              <line x1="26.2" y1="6" x2="27.8" y2="5" />
+              <line x1="16.5" y1="3.2" x2="15.2" y2="1.8" />
+              <line x1="13.8" y1="6" x2="12.2" y2="5" />
+            </g>
+
+            {/* 2. Golden-Yellow Sun Disk positioned behind upper edge of panel */}
+            <circle
+              cx="20"
+              cy="6.5"
+              r="4.6"
+              fill="url(#sunDiskGradient)"
+              stroke={isHovered ? "#FFD84D" : "#FFC928"}
+              strokeWidth={isHovered ? "0.75" : "0.5"}
+            />
+
+            {/* 3. Structural Ground-Mount Support Stand beneath panel */}
+            <line
+              x1="11"
+              y1="20"
+              x2="9.5"
+              y2="27"
+              stroke={isHovered ? "#FFD84D" : "#FFC928"}
+              strokeWidth={isHovered ? "1.3" : "1.1"}
+              strokeLinecap="round"
+            />
+            <line
+              x1="16"
+              y1="21.5"
+              x2="16"
+              y2="27"
+              stroke={isHovered ? "#FFD84D" : "#FFC928"}
+              strokeWidth={isHovered ? "1.3" : "1.1"}
+              strokeLinecap="round"
+            />
+            <line
+              x1="7.5"
+              y1="27"
+              x2="18.5"
+              y2="27"
+              stroke={isHovered ? "#FFD84D" : "#102B50"}
+              strokeWidth={isHovered ? "1.3" : "1.2"}
+              strokeLinecap="round"
+            />
+
+            {/* 4. Dominant Tilted Solar Panel Module */}
+            {/* Outer panel aluminum housing with hairline edge */}
             <polygon
-              points="0.5,0.5 10.5,1.5 28.5,11.5 20.5,29.5 1.5,20.5 0.5,0.5"
+              points="1,4 25,8 20,24 2,19"
               fill="#102B50"
               stroke={isHovered ? "#FFD84D" : "#FFF8E7"}
-              strokeWidth={isHovered ? "1.2" : "0.75"}
+              strokeWidth={isHovered ? "1" : "0.75"}
               strokeLinejoin="round"
             />
 
-            {/* Inner Photovoltaic Wafer Surface */}
+            {/* Photovoltaic Cell Wafer Surface */}
             <polygon
-              points="3.5,3.5 26.5,12.5 19.5,27.5 3.5,19.5"
+              points="2.8,5.8 23.5,9.2 19,22.8 3.5,18"
               fill="url(#pvCellGradient)"
               stroke={isHovered ? "#FFD84D" : "#FFC928"}
-              strokeWidth={isHovered ? "1.2" : "0.9"}
+              strokeWidth={isHovered ? "1" : "0.75"}
               strokeLinejoin="round"
             />
 
-            {/* Solar Cell Grid Lines (Busbars & Dividers) */}
-            {/* Longitudinal busbar */}
+            {/* Clean Grid Dividers & Busbars (6 Cells) */}
             <line
-              x1="15.5"
-              y1="8"
-              x2="11.5"
-              y2="23.5"
+              x1="13"
+              y1="7.5"
+              x2="11.2"
+              y2="20.8"
               stroke={isHovered ? "#FFD84D" : "#FFC928"}
-              strokeWidth={isHovered ? "1.1" : "0.85"}
-            />
-            {/* Transverse cell dividers */}
-            <line
-              x1="3.5"
-              y1="9"
-              x2="24.5"
-              y2="17.5"
-              stroke={isHovered ? "#FFD84D" : "#FFC928"}
-              strokeWidth={isHovered ? "1.1" : "0.85"}
+              strokeWidth={isHovered ? "0.9" : "0.75"}
             />
             <line
-              x1="3.5"
-              y1="14.5"
+              x1="3.2"
+              y1="9.8"
               x2="22"
-              y2="22.5"
+              y2="13.8"
               stroke={isHovered ? "#FFD84D" : "#FFC928"}
-              strokeWidth={isHovered ? "1.1" : "0.85"}
-            />
-
-            {/* Micro collector fingers */}
-            <line
-              x1="9.5"
-              y1="5.5"
-              x2="7.5"
-              y2="21.5"
-              stroke={isHovered ? "#FFF8E7" : "#FFD84D"}
-              strokeWidth="0.4"
-              strokeOpacity="0.6"
+              strokeWidth={isHovered ? "0.9" : "0.75"}
             />
             <line
-              x1="21"
-              y1="10.5"
-              x2="16"
-              y2="25.5"
-              stroke={isHovered ? "#FFF8E7" : "#FFD84D"}
-              strokeWidth="0.4"
-              strokeOpacity="0.6"
+              x1="3.4"
+              y1="14"
+              x2="20.5"
+              y2="18.2"
+              stroke={isHovered ? "#FFD84D" : "#FFC928"}
+              strokeWidth={isHovered ? "0.9" : "0.75"}
             />
 
-            {/* Precision Pointer Apex Tip directly at (0, 0) */}
+            {/* Micro collector busbars */}
+            <line
+              x1="8"
+              y1="6.8"
+              x2="7.2"
+              y2="19.2"
+              stroke={isHovered ? "#FFF8E7" : "#FFD84D"}
+              strokeWidth="0.3"
+              strokeOpacity="0.65"
+            />
+            <line
+              x1="18.2"
+              y1="8.5"
+              x2="15.5"
+              y2="21.8"
+              stroke={isHovered ? "#FFF8E7" : "#FFD84D"}
+              strokeWidth="0.3"
+              strokeOpacity="0.65"
+            />
+
+            {/* 5. Precision Pointer Apex directly at (0, 0) */}
             <polygon
-              points="0,0 7.5,1 5.5,5 1,7.5"
+              points="0,0 6,1 4,4 1,6"
               fill={isHovered ? "#FFD84D" : "#FFC928"}
               stroke="#102B50"
               strokeWidth="0.6"
