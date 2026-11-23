@@ -391,3 +391,35 @@ body {
   border-color: rgba(96, 165, 250, 0.35);
   background-color: rgba(96, 165, 250, 0.12);
 }
+
+/* ==========================================================================
+   Custom Payzero Solar Cursor Rules
+   Active strictly on fine pointer desktop devices with hover support.
+   Touch devices and mobile screens are 100% untouched.
+   ========================================================================== */
+@media (pointer: fine) and (hover: hover) {
+  html.custom-cursor-active,
+  html.custom-cursor-active body,
+  html.custom-cursor-active a,
+  html.custom-cursor-active button,
+  html.custom-cursor-active [role="button"],
+  html.custom-cursor-active label,
+  html.custom-cursor-active summary,
+  html.custom-cursor-active select,
+  html.custom-cursor-active .card-header svg {
+    cursor: none !important;
+  }
+
+  html.custom-cursor-active input[type="text"],
+  html.custom-cursor-active input[type="email"],
+  html.custom-cursor-active input[type="tel"],
+  html.custom-cursor-active input[type="password"],
+  html.custom-cursor-active input[type="search"],
+  html.custom-cursor-active input[type="number"],
+  html.custom-cursor-active input[type="url"],
+  html.custom-cursor-active textarea,
+  html.custom-cursor-active [contenteditable="true"] {
+    cursor: text !important;
+  }
+}
+

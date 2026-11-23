@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import SolarCursor from "@/components/ui/SolarCursor";
 
 const headingFont = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -102,6 +103,7 @@ export default function RootLayout({
       className={`${headingFont.variable} ${bodyFont.variable} ${monoFont.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col bg-[var(--bg-primary)] text-[var(--text-primary)]">
+        <SolarCursor />
         <Header />
         <main className="flex-1 w-full">{children}</main>
         <Footer />
