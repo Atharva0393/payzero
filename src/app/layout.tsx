@@ -4,6 +4,9 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SolarCursor from "@/components/ui/SolarCursor";
+import JsonLd from "@/components/seo/JsonLd";
+import { SITE_URL } from "@/data/site";
+import { getWebSiteSchema, getOrganizationSchema } from "@/lib/schema";
 
 const headingFont = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -27,7 +30,10 @@ const monoFont = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://payzeroenergy.com"),
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "Payzero | Let the Sun Pay Your Energy Bills",
     template: "%s | Payzero",
@@ -37,8 +43,12 @@ export const metadata: Metadata = {
   keywords: [
     "Payzero",
     "Solar Energy Expert",
+    "Solar EPC Company Chhatrapati Sambhajinagar",
+    "Solar Installation Maharashtra",
     "Commercial Solar Infrastructure",
     "Residential Solar Rooftop",
+    "Industrial Solar Rooftops",
+    "Ground Mounted Solar",
     "Solar Net Metering",
     "Solar Subsidy Assistance",
     "Industrial Battery Storage",
@@ -58,8 +68,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
-    url: "https://payzeroenergy.com",
+    locale: "en_IN",
+    url: SITE_URL,
     title: "Payzero | Let the Sun Pay Your Energy Bills",
     description:
       "Payzero makes solar energy simple with expert site surveys, custom solar system design, quality components, professional installation, net metering support, and subsidy assistance.",
@@ -84,6 +94,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+  },
 };
 
 export const viewport: Viewport = {
@@ -97,11 +110,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const websiteSchema = getWebSiteSchema();
+  const organizationSchema = getOrganizationSchema();
+
   return (
     <html
       lang="en"
       className={`${headingFont.variable} ${bodyFont.variable} ${monoFont.variable} antialiased`}
     >
+      <head>
+        <JsonLd data={websiteSchema} />
+        <JsonLd data={organizationSchema} />
+      </head>
       <body className="min-h-screen flex flex-col bg-[var(--bg-primary)] text-[var(--text-primary)]">
         <SolarCursor />
         <Header />

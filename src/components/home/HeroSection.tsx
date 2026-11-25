@@ -1,10 +1,22 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className="relative w-full h-screen min-h-screen flex flex-col justify-between pt-24 sm:pt-28 pb-6 sm:pb-8 text-white bg-[url('/herobg.png')] bg-cover bg-center bg-no-repeat overflow-hidden">
+    <section className="relative w-full h-screen min-h-screen flex flex-col justify-between pt-24 sm:pt-28 pb-6 sm:pb-8 text-white overflow-hidden">
+      {/* Optimized Background Image using Next.js Image with priority LCP loading */}
+      <Image
+        src="/herobg.webp"
+        alt="Solar energy infrastructure and photovoltaic panel installation"
+        fill
+        priority
+        sizes="100vw"
+        quality={80}
+        className="object-cover object-center pointer-events-none"
+      />
+
       {/* Subtle top & bottom vignette gradient overlays for high text contrast */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/10 to-black/35 pointer-events-none" />
 

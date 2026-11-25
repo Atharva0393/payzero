@@ -1,15 +1,48 @@
 import React from "react";
+import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
+import JsonLd from "@/components/seo/JsonLd";
 import { SITE_CONFIG } from "@/data/site";
+import { getBreadcrumbSchema } from "@/lib/schema";
 
-export const metadata = {
-  title: "Terms of Infrastructure | Payzero",
+export const metadata: Metadata = {
+  title: "Terms of Infrastructure",
   description: "Terms and conditions of service for Pay Zero Energy Expert Private Limited.",
+  alternates: {
+    canonical: "/terms",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: `${SITE_CONFIG.url}/terms`,
+    title: "Terms of Infrastructure | Payzero",
+    description: "Terms and conditions of service for Pay Zero Energy Expert Private Limited.",
+    siteName: "Payzero",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Payzero Terms of Infrastructure",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms of Infrastructure | Payzero",
+    description: "Terms and conditions of service for Pay Zero Energy Expert Private Limited.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function TermsPage() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Terms of Infrastructure", path: "/terms" },
+  ]);
+
   return (
     <main className="min-h-screen pt-28 pb-20 bg-[var(--bg-primary)] text-[var(--text-primary)]">
+      <JsonLd data={breadcrumbSchema} />
       <section className="py-16 sm:py-20 border-b border-[var(--border-light)]">
         <Container size="default">
           <div className="max-w-3xl space-y-4">

@@ -1,18 +1,55 @@
 import React from "react";
-import Link from "next/link";
+import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import SolutionsSection from "@/components/home/SolutionsSection";
 import Button from "@/components/ui/Button";
+import JsonLd from "@/components/seo/JsonLd";
+import { SITE_CONFIG } from "@/data/site";
+import { getSolutionsServicesSchema, getBreadcrumbSchema } from "@/lib/schema";
 
-export const metadata = {
-  title: "Solar & Energy Storage Solutions | Payzero",
+export const metadata: Metadata = {
+  title: "Solar & Energy Storage Solutions",
   description:
     "Explore Payzero's commercial solar, utility ground arrays, battery storage (BESS), and microgrid clean energy solutions.",
+  alternates: {
+    canonical: "/solutions",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: `${SITE_CONFIG.url}/solutions`,
+    title: "Solar & Energy Storage Solutions | Payzero",
+    description:
+      "Explore Payzero's commercial solar, utility ground arrays, battery storage (BESS), and microgrid clean energy solutions.",
+    siteName: "Payzero",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Payzero Solar Solutions",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Solar & Energy Storage Solutions | Payzero",
+    description:
+      "Explore Payzero's commercial solar, utility ground arrays, battery storage (BESS), and microgrid clean energy solutions.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function SolutionsPage() {
+  const servicesSchema = getSolutionsServicesSchema();
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Solutions", path: "/solutions" },
+  ]);
+
   return (
     <main className="min-h-screen pt-28 pb-20 bg-[#FFF8E7] text-[#102B50]">
+      <JsonLd data={servicesSchema} />
+      <JsonLd data={breadcrumbSchema} />
       {/* Header Banner */}
       <section className="py-16 sm:py-20 border-b border-[#E8D8A5]/40">
         <Container size="default">
@@ -25,7 +62,7 @@ export default function SolutionsPage() {
               Purpose-Built Clean Energy Architecture.
             </h1>
             <p className="text-lg sm:text-xl text-[#536171] leading-relaxed font-normal">
-              From commercial rooftops to utility-scale ground mounts and battery storage, we design clean energy systems around your property&apos;s exact load profile.
+              From commercial rooftops to utility-scale ground mounts and battery storage, we design clean energy systems around your property&apos;s exact load profile across Maharashtra.
             </p>
           </div>
         </Container>

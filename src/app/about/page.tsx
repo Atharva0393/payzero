@@ -1,14 +1,44 @@
 import React from "react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import Logo from "@/components/layout/Logo";
+import JsonLd from "@/components/seo/JsonLd";
 import { SITE_CONFIG } from "@/data/site";
+import { getBreadcrumbSchema } from "@/lib/schema";
 
-export const metadata = {
-  title: "About Pay Zero Energy Expert Private Limited | Solar EPC Solutions",
+export const metadata: Metadata = {
+  title: "About Us — Solar EPC & Renewable Infrastructure",
   description:
     "Corporate profile of Pay Zero Energy Expert Private Limited. End-to-end solar EPC solutions, engineering expertise, integrated procurement, construction, and asset lifecycle management across Maharashtra.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: `${SITE_CONFIG.url}/about`,
+    title: "About Pay Zero Energy Expert Private Limited | Payzero",
+    description:
+      "End-to-end solar EPC solutions, engineering expertise, integrated procurement, and asset lifecycle management across Maharashtra.",
+    siteName: "Payzero",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "About Payzero – Solar Energy Expert",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Pay Zero Energy Expert Private Limited | Payzero",
+    description:
+      "End-to-end solar EPC solutions, engineering expertise, integrated procurement, and asset lifecycle management across Maharashtra.",
+    images: ["/og-image.png"],
+  },
 };
 
 const CAPABILITIES = [
@@ -162,8 +192,13 @@ const OPERATING_PRINCIPLES = [
 ];
 
 export default function AboutPage() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "About Us", path: "/about" },
+  ]);
+
   return (
     <main className="min-h-screen pt-28 pb-16 bg-[#FFF8E7] text-[#102B50]">
+      <JsonLd data={breadcrumbSchema} />
       {/* ========================================================
           SECTION 1 — Editorial Hero
           ======================================================== */}

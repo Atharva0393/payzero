@@ -1,15 +1,48 @@
 import React from "react";
+import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
+import JsonLd from "@/components/seo/JsonLd";
 import { SITE_CONFIG } from "@/data/site";
+import { getBreadcrumbSchema } from "@/lib/schema";
 
-export const metadata = {
-  title: "Privacy Standard | Payzero",
+export const metadata: Metadata = {
+  title: "Privacy Standard",
   description: "Information collection and privacy policy for Pay Zero Energy Expert Private Limited.",
+  alternates: {
+    canonical: "/privacy",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: `${SITE_CONFIG.url}/privacy`,
+    title: "Privacy Standard | Payzero",
+    description: "Information collection and privacy policy for Pay Zero Energy Expert Private Limited.",
+    siteName: "Payzero",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Payzero Privacy Standard",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Standard | Payzero",
+    description: "Information collection and privacy policy for Pay Zero Energy Expert Private Limited.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function PrivacyPage() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Privacy Standard", path: "/privacy" },
+  ]);
+
   return (
     <main className="min-h-screen pt-28 pb-20 bg-[var(--bg-primary)] text-[var(--text-primary)]">
+      <JsonLd data={breadcrumbSchema} />
       <section className="py-16 sm:py-20 border-b border-[var(--border-light)]">
         <Container size="default">
           <div className="max-w-3xl space-y-4">

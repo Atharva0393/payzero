@@ -79,7 +79,7 @@ export const EpcServicesSection: React.FC = () => {
           We are a full-service EPC (Engineering, Procurement & Construction) company delivering:
         </p>
         <p className="text-base sm:text-lg text-[#536171] leading-relaxed max-w-3xl">
-          End-to-end solar energy systems engineered for maximum generation, uncompromising safety, and rapid financial return. From preliminary site analysis to government subsidy disbursement, we handle every phase under one roof.
+          Headquartered in Chhatrapati Sambhajinagar, Maharashtra, we deliver end-to-end solar energy systems engineered for maximum generation, uncompromising safety, and rapid financial return. From preliminary site analysis to government subsidy disbursement, we handle every phase under one roof.
         </p>
       </div>
 

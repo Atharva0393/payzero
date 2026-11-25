@@ -1,17 +1,54 @@
 import React from "react";
+import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import ProcessSection from "@/components/home/ProcessSection";
-import Button from "@/components/ui/Button";
+import JsonLd from "@/components/seo/JsonLd";
+import { SITE_CONFIG } from "@/data/site";
+import { getEpcProcessServiceSchema, getBreadcrumbSchema } from "@/lib/schema";
 
-export const metadata = {
-  title: "How It Works | Payzero Solar Infrastructure",
+export const metadata: Metadata = {
+  title: "How It Works — Solar EPC Process & Methodology",
   description:
-    "Discover Payzero's 4-step engineering methodology: Site Assessment, Structural Design, Turnkey Installation, and Grid Activation.",
+    "Discover Payzero's 6-step solar EPC engineering methodology: site survey, custom design, production, installation, net metering, and government subsidy assistance.",
+  alternates: {
+    canonical: "/how-it-works",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: `${SITE_CONFIG.url}/how-it-works`,
+    title: "How It Works — Solar EPC Process & Methodology | Payzero",
+    description:
+      "Discover Payzero's 6-step solar EPC engineering methodology: site survey, custom design, production, installation, net metering, and government subsidy assistance.",
+    siteName: "Payzero",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Payzero Work Process",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How It Works — Solar EPC Process & Methodology | Payzero",
+    description:
+      "Discover Payzero's 6-step solar EPC engineering methodology: site survey, custom design, production, installation, net metering, and government subsidy assistance.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function HowItWorksPage() {
+  const epcServiceSchema = getEpcProcessServiceSchema();
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "How It Works", path: "/how-it-works" },
+  ]);
+
   return (
     <main className="min-h-screen pt-28 pb-20 bg-[#FFF8E7] text-[#102B50]">
+      <JsonLd data={epcServiceSchema} />
+      <JsonLd data={breadcrumbSchema} />
       {/* Header Banner */}
       <section className="py-16 sm:py-20 border-b border-[#E8D8A5]/40">
         <Container size="default">

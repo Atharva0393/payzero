@@ -1,6 +1,8 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useSyncExternalStore } from "react";
+
+const emptySubscribe = () => () => {};
 
 /**
  * Payzero Custom Solar-Inspired Mouse Cursor
@@ -13,7 +15,11 @@ import React, { useEffect, useRef, useState } from "react";
  */
 export default function SolarCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isTextTarget, setIsTextTarget] = useState(false);
@@ -26,7 +32,6 @@ export default function SolarCursor() {
     const finePointerMedia = window.matchMedia("(pointer: fine)");
     if (!finePointerMedia.matches) return;
 
-    setMounted(true);
     document.documentElement.classList.add("custom-cursor-active");
 
     let animationFrameId: number;

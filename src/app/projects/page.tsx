@@ -1,17 +1,52 @@
 import React from "react";
+import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import ProjectsSection from "@/components/home/ProjectsSection";
-import Button from "@/components/ui/Button";
+import JsonLd from "@/components/seo/JsonLd";
+import { SITE_CONFIG } from "@/data/site";
+import { getBreadcrumbSchema } from "@/lib/schema";
 
-export const metadata = {
-  title: "Clean Energy Projects Portfolio | Payzero",
+export const metadata: Metadata = {
+  title: "Clean Energy Projects & Portfolio",
   description:
     "Explore Payzero's deployed commercial solar arrays, industrial ground mounts, and microgrid installations.",
+  alternates: {
+    canonical: "/projects",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: `${SITE_CONFIG.url}/projects`,
+    title: "Clean Energy Projects & Portfolio | Payzero",
+    description:
+      "Explore Payzero's deployed commercial solar arrays, industrial ground mounts, and microgrid installations.",
+    siteName: "Payzero",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Payzero Projects Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Clean Energy Projects & Portfolio | Payzero",
+    description:
+      "Explore Payzero's deployed commercial solar arrays, industrial ground mounts, and microgrid installations.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function ProjectsPage() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Projects", path: "/projects" },
+  ]);
+
   return (
     <main className="min-h-screen pt-28 pb-20 bg-[#FFF8E7] text-[#102B50]">
+      <JsonLd data={breadcrumbSchema} />
       {/* Header Banner */}
       <section className="py-16 sm:py-20 border-b border-[#E8D8A5]/40">
         <Container size="default">
