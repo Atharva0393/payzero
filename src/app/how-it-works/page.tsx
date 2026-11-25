@@ -7,9 +7,9 @@ import { SITE_CONFIG } from "@/data/site";
 import { getEpcProcessServiceSchema, getBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "How It Works — Solar EPC Process & Methodology",
+  title: "How It Works — 6-Step Turnkey Solar EPC Process & Methodology",
   description:
-    "Discover Payzero's 6-step solar EPC engineering methodology: site survey, custom design, production, installation, net metering, and government subsidy assistance.",
+    "Discover Payzero's 6-step turnkey solar EPC methodology: 3D site survey, custom engineering design, quality procurement, precision installation, MSEDCL net metering assistance, and government solar subsidy assistance.",
   alternates: {
     canonical: "/how-it-works",
   },
@@ -17,9 +17,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: `${SITE_CONFIG.url}/how-it-works`,
-    title: "How It Works — Solar EPC Process & Methodology | Payzero",
+    title: "6-Step Turnkey Solar EPC Engineering Process | Payzero",
     description:
-      "Discover Payzero's 6-step solar EPC engineering methodology: site survey, custom design, production, installation, net metering, and government subsidy assistance.",
+      "Discover Payzero's 6-step turnkey solar EPC methodology: 3D site survey, custom engineering design, quality procurement, precision installation, MSEDCL net metering assistance, and government solar subsidy assistance.",
     siteName: "Payzero",
     images: [
       {
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "How It Works — Solar EPC Process & Methodology | Payzero",
+    title: "6-Step Turnkey Solar EPC Engineering Process | Payzero",
     description:
-      "Discover Payzero's 6-step solar EPC engineering methodology: site survey, custom design, production, installation, net metering, and government subsidy assistance.",
+      "Discover Payzero's 6-step turnkey solar EPC methodology: 3D site survey, custom engineering design, quality procurement, precision installation, MSEDCL net metering assistance, and government solar subsidy assistance.",
     images: ["/og-image.png"],
   },
 };
@@ -58,10 +58,10 @@ export default function HowItWorksPage() {
               THE PAYZERO METHODOLOGY
             </div>
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#102B50] leading-[1.08]">
-              A Rigorous, 4-Stage Infrastructure Process.
+              A Rigorous, 6-Step Turnkey Solar EPC Process.
             </h1>
             <p className="text-lg sm:text-xl text-[#536171] leading-relaxed font-normal">
-              We manage the entire project lifecycle—from initial architectural & load audit to utility interconnection and commercial asset commissioning.
+              From initial site survey and 3D shadow analysis to precision installation, MSEDCL net metering assistance, and government subsidy assistance, we manage every phase under one roof.
             </p>
           </div>
         </Container>

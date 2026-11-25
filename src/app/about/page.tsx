@@ -9,9 +9,9 @@ import { SITE_CONFIG } from "@/data/site";
 import { getBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "About Us — Solar EPC & Renewable Infrastructure",
+  title: "About Us — Solar EPC Contractors & Engineering Footprint",
   description:
-    "Corporate profile of Pay Zero Energy Expert Private Limited. End-to-end solar EPC solutions, engineering expertise, integrated procurement, construction, and asset lifecycle management across Maharashtra.",
+    "Corporate profile of Pay Zero Energy Expert Private Limited. Turnkey solar EPC company headquartered at MIDC Chilkalthana, Chhatrapati Sambhajinagar, Maharashtra, delivering engineering, procurement, construction, and asset management.",
   alternates: {
     canonical: "/about",
   },
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: `${SITE_CONFIG.url}/about`,
-    title: "About Pay Zero Energy Expert Private Limited | Payzero",
+    title: "About Pay Zero Energy Expert Private Limited | Solar EPC Maharashtra",
     description:
-      "End-to-end solar EPC solutions, engineering expertise, integrated procurement, and asset lifecycle management across Maharashtra.",
+      "Turnkey solar EPC contractor headquartered at MIDC Chilkalthana, Chhatrapati Sambhajinagar, Maharashtra, with comprehensive engineering, procurement, and construction capabilities.",
     siteName: "Payzero",
     images: [
       {
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Pay Zero Energy Expert Private Limited | Payzero",
+    title: "About Pay Zero Energy Expert Private Limited | Solar EPC Maharashtra",
     description:
-      "End-to-end solar EPC solutions, engineering expertise, integrated procurement, and asset lifecycle management across Maharashtra.",
+      "Turnkey solar EPC contractor headquartered at MIDC Chilkalthana, Chhatrapati Sambhajinagar, Maharashtra, with comprehensive engineering, procurement, and construction capabilities.",
     images: ["/og-image.png"],
   },
 };

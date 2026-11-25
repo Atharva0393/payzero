@@ -7,9 +7,9 @@ import { SITE_CONFIG } from "@/data/site";
 import { getBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Clean Energy Projects & Portfolio",
+  title: "Commercial & Industrial Solar Projects in Maharashtra",
   description:
-    "Explore Payzero's deployed commercial solar arrays, industrial ground mounts, and microgrid installations.",
+    "Explore Payzero's commercial and industrial solar project configurations, architectural system layouts, and utility ground-mounted engineering portfolio across Maharashtra.",
   alternates: {
     canonical: "/projects",
   },
@@ -17,9 +17,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: `${SITE_CONFIG.url}/projects`,
-    title: "Clean Energy Projects & Portfolio | Payzero",
+    title: "Commercial & Industrial Solar Projects in Maharashtra | Payzero",
     description:
-      "Explore Payzero's deployed commercial solar arrays, industrial ground mounts, and microgrid installations.",
+      "Explore Payzero's commercial and industrial solar project configurations, architectural system layouts, and utility ground-mounted engineering portfolio across Maharashtra.",
     siteName: "Payzero",
     images: [
       {
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Clean Energy Projects & Portfolio | Payzero",
+    title: "Commercial & Industrial Solar Projects in Maharashtra | Payzero",
     description:
-      "Explore Payzero's deployed commercial solar arrays, industrial ground mounts, and microgrid installations.",
+      "Explore Payzero's commercial and industrial solar project configurations, architectural system layouts, and utility ground-mounted engineering portfolio across Maharashtra.",
     images: ["/og-image.png"],
   },
 };

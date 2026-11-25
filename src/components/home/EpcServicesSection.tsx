@@ -20,7 +20,7 @@ const VISUAL_SERVICES: VisualService[] = [
     title: "Ground Mounted Solar",
     description: "Large-scale solar plants for maximum energy generation.",
     image: "/services/ground-mounted-solar.webp",
-    alt: "Ground-mounted solar panel installation",
+    alt: "Ground-mounted solar power plant installation for agricultural and commercial land in Maharashtra",
     badge: "UTILITY & MEGAWATT",
   },
   {
@@ -29,7 +29,7 @@ const VISUAL_SERVICES: VisualService[] = [
     title: "Residential Rooftop Solar",
     description: "Produce clean energy from your rooftop and lower electricity costs.",
     image: "/services/residential-rooftop-solar.webp",
-    alt: "Residential rooftop solar panel installation",
+    alt: "Residential rooftop solar panel installation on home with net metering in Maharashtra",
     badge: "HOMES & ESTATES",
   },
   {
@@ -38,7 +38,7 @@ const VISUAL_SERVICES: VisualService[] = [
     title: "Commercial Solar Solutions",
     description: "Efficient solar setups for offices and businesses.",
     image: "/services/commercial-solar-solutions.webp",
-    alt: "Commercial rooftop solar installation",
+    alt: "Commercial and industrial rooftop solar installation for business facility in Maharashtra",
     badge: "ENTERPRISE & SME",
   },
 ];
@@ -165,9 +165,9 @@ export const EpcServicesSection: React.FC = () => {
             <span className="w-2 h-2 rounded-full bg-[#FFC928]" />
             COMPLETE EPC CAPABILITIES
           </div>
-          <h4 className="font-heading text-2xl sm:text-3xl font-bold text-[#102B50] tracking-tight">
+          <h3 className="font-heading text-2xl sm:text-3xl font-bold text-[#102B50] tracking-tight">
             Our Four Core Solar Service Categories
-          </h4>
+          </h3>
           <p className="text-sm sm:text-base text-[#536171] leading-relaxed">
             Delivering precision engineering, Tier-1 procurement, and professional execution across every sector:
           </p>
@@ -187,14 +187,28 @@ export const EpcServicesSection: React.FC = () => {
                   CAT // {cat.number}
                 </span>
               </div>
-              <h5 className="font-heading text-base sm:text-lg font-bold text-[#102B50] leading-snug">
+              <h4 className="font-heading text-base sm:text-lg font-bold text-[#102B50] leading-snug">
                 {cat.name}
-              </h5>
+              </h4>
               <p className="text-xs sm:text-sm text-[#536171] leading-relaxed font-normal">
                 {cat.scope}
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Contextual Internal Link to Solutions Hub */}
+        <div className="relative z-10 mt-8 pt-6 border-t border-[#E8D8A5]/60 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <p className="text-xs sm:text-sm text-[#536171]">
+            Looking for detailed engineering specifications and load profiles?
+          </p>
+          <Link
+            href="/solutions"
+            className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#102B50] hover:text-[#EAA900] transition-colors group"
+          >
+            <span>Explore Detailed Solar Solutions</span>
+            <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+          </Link>
         </div>
       </div>
     </section>

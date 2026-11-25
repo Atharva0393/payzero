@@ -8,9 +8,9 @@ import { SITE_CONFIG } from "@/data/site";
 import { getSolutionsServicesSchema, getBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Solar & Energy Storage Solutions",
+  title: "Solar & Energy Storage Solutions — Rooftop & Ground Mount",
   description:
-    "Explore Payzero's commercial solar, utility ground arrays, battery storage (BESS), and microgrid clean energy solutions.",
+    "Explore Payzero's turnkey solar solutions: residential rooftop solar, commercial solar rooftop infrastructure, industrial MIDC systems, utility ground mounts, and battery storage (BESS) across Maharashtra.",
   alternates: {
     canonical: "/solutions",
   },
@@ -18,9 +18,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: `${SITE_CONFIG.url}/solutions`,
-    title: "Solar & Energy Storage Solutions | Payzero",
+    title: "Commercial, Industrial & Residential Solar Solutions | Payzero",
     description:
-      "Explore Payzero's commercial solar, utility ground arrays, battery storage (BESS), and microgrid clean energy solutions.",
+      "Explore Payzero's turnkey solar solutions: residential rooftop solar, commercial solar rooftop infrastructure, industrial systems, utility ground mounts, and battery storage across Maharashtra.",
     siteName: "Payzero",
     images: [
       {
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Solar & Energy Storage Solutions | Payzero",
+    title: "Commercial, Industrial & Residential Solar Solutions | Payzero",
     description:
-      "Explore Payzero's commercial solar, utility ground arrays, battery storage (BESS), and microgrid clean energy solutions.",
+      "Explore Payzero's turnkey solar solutions: residential rooftop solar, commercial solar rooftop infrastructure, industrial systems, utility ground mounts, and battery storage across Maharashtra.",
     images: ["/og-image.png"],
   },
 };

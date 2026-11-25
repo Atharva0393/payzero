@@ -15,6 +15,7 @@ interface SolutionItem {
   imageSublabel: string;
   imageAspect: "4/3" | "16/9" | "21/9";
   imageSrc?: string;
+  imageAlt?: string;
 }
 
 const SOLUTIONS_DATA: SolutionItem[] = [
@@ -24,12 +25,13 @@ const SOLUTIONS_DATA: SolutionItem[] = [
     category: "RESIDENTIAL SOLAR",
     title: "Residential Solar Systems",
     description:
-      "Architecturally integrated solar power systems designed for modern residences, private homes, and residential estates.",
-    href: "#contact",
+      "Architecturally integrated rooftop solar power systems designed for private residences, housing societies, and modern estates with net metering.",
+    href: "/#contact",
     imageLabel: "PAYZERO // RESIDENTIAL SOLAR ASSET",
     imageSublabel: "Modern private residential estate with integrated rooftop solar architecture",
     imageAspect: "4/3",
     imageSrc: "/services/residential-rooftop-solar.webp",
+    imageAlt: "Residential rooftop solar panel installation on home with net metering in Maharashtra",
   },
   {
     id: "commercial",
@@ -37,12 +39,13 @@ const SOLUTIONS_DATA: SolutionItem[] = [
     category: "COMMERCIAL SOLAR",
     title: "Commercial & Industrial Solutions",
     description:
-      "High-capacity rooftop and ground-mount solar infrastructure engineered for corporate facilities, commercial buildings, and high-consumption properties.",
-    href: "#contact",
+      "High-capacity rooftop and ground-mount solar infrastructure engineered for corporate offices, manufacturing plants, and high-consumption industrial facilities.",
+    href: "/#contact",
     imageLabel: "PAYZERO // COMMERCIAL SOLAR INFRASTRUCTURE",
     imageSublabel: "High-capacity commercial rooftop solar array installation",
     imageAspect: "4/3",
     imageSrc: "/services/commercial-solar-solutions.webp",
+    imageAlt: "Commercial and industrial rooftop solar installation for corporate and manufacturing facility",
   },
   {
     id: "energy",
@@ -50,12 +53,13 @@ const SOLUTIONS_DATA: SolutionItem[] = [
     category: "ENERGY SOLUTIONS",
     title: "Storage & Ground Mount Systems",
     description:
-      "Comprehensive energy infrastructure covering utility-scale ground mounts, battery storage (BESS), load-balancing telemetry, and microgrids.",
-    href: "#contact",
+      "Comprehensive energy infrastructure covering utility-scale ground mounts, battery energy storage systems (BESS), load-balancing telemetry, and microgrids.",
+    href: "/#contact",
     imageLabel: "PAYZERO // GROUND MOUNT & BESS SYSTEM",
     imageSublabel: "Utility-scale ground mounted solar array and battery storage infrastructure",
     imageAspect: "4/3",
     imageSrc: "/services/ground-mounted-solar.webp",
+    imageAlt: "Utility ground-mounted solar power plant and industrial battery energy storage system (BESS)",
   },
 ];
 
@@ -137,7 +141,7 @@ export const SolutionsSection: React.FC = () => {
                   <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden border border-[#E8D8A5] shadow-xs bg-[#FFF0B8]/40">
                     <Image
                       src={item.imageSrc}
-                      alt={item.title}
+                      alt={item.imageAlt || item.title}
                       fill
                       sizes="(max-width: 1024px) 100vw, 450px"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"

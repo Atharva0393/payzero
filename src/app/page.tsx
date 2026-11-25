@@ -39,7 +39,7 @@ export default function HomePage() {
               Dedicated System Hubs.
             </h2>
             <p className="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed font-normal">
-              Explore our purpose-built system configurations, 4-stage engineering methodology, and active project portfolio on their dedicated pages.
+              Explore our purpose-built system configurations, 6-step engineering methodology, and active project portfolio on their dedicated pages.
             </p>
           </div>
 
@@ -67,7 +67,7 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="relative z-10 inline-flex items-center gap-2 text-xs font-mono font-bold text-[#102B50] group-hover:text-[#EAA900] group-hover:translate-x-1 transition-all">
-                <span>View Solutions</span>
+                <span>Explore Solar Solutions</span>
                 <span>→</span>
               </div>
             </Link>
@@ -91,11 +91,11 @@ export default function HomePage() {
                   How It Works
                 </h3>
                 <p className="text-sm text-[#536171] leading-relaxed font-normal">
-                  Explore our 4-stage engineering lifecycle: Site Assessment, System Design, Installation, and Grid Activation.
+                  Explore our 6-step engineering methodology: Site Survey, Custom Design, Production, Installation, Net Metering, and Subsidy Assistance.
                 </p>
               </div>
               <div className="relative z-10 inline-flex items-center gap-2 text-xs font-mono font-bold text-[#102B50] group-hover:text-[#EAA900] group-hover:translate-x-1 transition-all">
-                <span>Explore Process</span>
+                <span>Explore 6-Step EPC Process</span>
                 <span>→</span>
               </div>
             </Link>
@@ -123,7 +123,7 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="relative z-10 inline-flex items-center gap-2 text-xs font-mono font-bold text-[#102B50] group-hover:text-[#EAA900] group-hover:translate-x-1 transition-all">
-                <span>See Projects</span>
+                <span>View Featured Projects</span>
                 <span>→</span>
               </div>
             </Link>

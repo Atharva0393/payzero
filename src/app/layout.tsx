@@ -35,11 +35,11 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   title: {
-    default: "Payzero | Let the Sun Pay Your Energy Bills",
+    default: "Payzero | Solar EPC Company in Chhatrapati Sambhajinagar, Maharashtra",
     template: "%s | Payzero",
   },
   description:
-    "Payzero makes solar energy simple with expert site surveys, custom solar system design, quality components, professional installation, net metering support, and subsidy assistance.",
+    "Payzero is a full-service solar EPC company in Chhatrapati Sambhajinagar, Maharashtra. We deliver residential, commercial, industrial and ground-mounted solar solutions, with MSEDCL net metering and government subsidy assistance.",
   keywords: [
     "Payzero",
     "Solar Energy Expert",
@@ -70,9 +70,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: SITE_URL,
-    title: "Payzero | Let the Sun Pay Your Energy Bills",
+    title: "Payzero | Solar EPC Company in Chhatrapati Sambhajinagar, Maharashtra",
     description:
-      "Payzero makes solar energy simple with expert site surveys, custom solar system design, quality components, professional installation, net metering support, and subsidy assistance.",
+      "Turnkey solar EPC solutions for residential rooftops, commercial buildings, industrial facilities, and ground-mounted power plants across Maharashtra.",
     siteName: "Payzero",
     images: [
       {
@@ -85,9 +85,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Payzero | Let the Sun Pay Your Energy Bills",
+    title: "Payzero | Solar EPC Company in Chhatrapati Sambhajinagar, Maharashtra",
     description:
-      "Payzero makes solar energy simple with expert site surveys, custom solar system design, quality components, professional installation, net metering support, and subsidy assistance.",
+      "Turnkey solar EPC solutions for residential rooftops, commercial buildings, industrial facilities, and ground-mounted power plants across Maharashtra.",
     images: ["/og-image.png"],
   },
   robots: {
