@@ -101,7 +101,7 @@ export function getOrganizationSchema() {
             "@type": "Service",
             name: "Residential Rooftop Solar Systems",
             description:
-              "Custom rooftop solar installations for independent homes and housing societies with net metering approvals and PM Surya Ghar subsidy assistance.",
+              "Custom rooftop solar installations for independent homes and housing societies with net metering assistance and PM Surya Ghar subsidy assistance.",
           },
         },
         {
@@ -239,7 +239,7 @@ export function getEpcProcessServiceSchema() {
       "@id": `${SITE_CONFIG.url}/#organization`,
     },
     description:
-      "Comprehensive end-to-end solar EPC project execution comprising detailed site survey, custom engineering design, quality production, precise installation, net metering grid approvals, and government subsidy assistance.",
+      "Comprehensive end-to-end solar EPC project execution comprising detailed site survey, custom engineering design, quality production, precise installation, grid connection and net metering assistance, and government subsidy assistance.",
     areaServed: {
       "@type": "AdministrativeArea",
       name: "Maharashtra",
